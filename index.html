@@ -1,0 +1,2920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certification Exam Preparation Resources and Study Guides | CertPrep Hub</title>
+<meta name="description" content="Prepare for certification exams with exam-specific knowledge notes, focus areas, study approaches, and curated resource links across Microsoft, Cisco, Oracle, Salesforce, Adobe, and more.">
+<style>
+:root {
+  --primary: #1d4e89;
+  --primary-dark: #12345c;
+  --primary-soft: #e7eef7;
+  --accent: #b45309;
+  --accent-dark: #8a3f0a;
+  --accent-soft: #fdf3e7;
+  --background: #f5f7fb;
+  --surface: #ffffff;
+  --surface-alt: #eef2f8;
+  --text-dark: #152238;
+  --text-muted: #56677f;
+  --border: #d6dfeb;
+  --white: #ffffff;
+  --shadow-sm: 0 1px 3px rgba(21, 34, 56, 0.08);
+  --shadow-md: 0 6px 18px rgba(21, 34, 56, 0.10);
+  --shadow-lg: 0 12px 28px rgba(21, 34, 56, 0.14);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --font-sans: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-sans);
+  background: var(--background);
+  color: var(--text-dark);
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.container {
+  width: min(1180px, 100% - 2.5rem);
+  margin-inline: auto;
+}
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.skip-link {
+  position: absolute; left: 12px; top: -48px;
+  background: var(--primary); color: var(--white);
+  padding: 10px 16px; border-radius: var(--radius-sm); z-index: 200;
+  transition: top 0.2s ease;
+}
+.skip-link:focus { top: 12px; }
+
+/* Header */
+.site-header {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  transition: box-shadow 0.25s ease;
+}
+.site-header.is-scrolled { box-shadow: var(--shadow-md); }
+.header-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; min-height: 64px;
+}
+.brand {
+  display: inline-flex; align-items: center; gap: 10px;
+  color: var(--text-dark); font-weight: 700; font-size: 1.08rem;
+  letter-spacing: 0.01em;
+}
+.brand:hover { text-decoration: none; }
+.brand-mark {
+  width: 34px; height: 34px; border-radius: 9px;
+  background: var(--primary); color: var(--white);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 0.85rem; font-weight: 800; letter-spacing: 0.02em;
+}
+.brand-mark svg { width: 18px; height: 18px; }
+.brand small {
+  display: block; font-size: 0.68rem; font-weight: 500;
+  color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase;
+}
+.header-nav { display: flex; align-items: center; gap: 6px; }
+.header-nav a {
+  color: var(--text-dark); font-size: 0.94rem; font-weight: 600;
+  padding: 8px 12px; border-radius: var(--radius-sm);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.header-nav a:hover, .header-nav a:focus-visible {
+  background: var(--primary-soft); color: var(--primary); text-decoration: none;
+}
+.header-actions { display: flex; align-items: center; gap: 8px; }
+.icon-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; border: 1px solid var(--border);
+  border-radius: var(--radius-sm); background: var(--surface);
+  color: var(--primary); cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.icon-btn:hover { border-color: var(--primary); background: var(--primary-soft); }
+.icon-btn svg { width: 18px; height: 18px; }
+.nav-toggle { display: none; }
+.progress-track {
+  height: 3px; width: 100%; background: var(--surface-alt);
+}
+.progress-bar {
+  height: 100%; width: 0%; background: var(--accent);
+  transition: width 0.1s linear;
+}
+
+/* Hero */
+.hero {
+  position: relative; overflow: hidden;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: clamp(2.5rem, 6vw, 4.5rem) 0;
+}
+.hero-grid {
+  display: grid; grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(1.75rem, 4vw, 3.25rem); align-items: center;
+}
+.hero-kicker {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--accent-soft); color: var(--accent-dark);
+  border: 1px solid #f0dcc4; border-radius: 999px;
+  padding: 6px 14px; font-size: 0.8rem; font-weight: 700;
+  letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 18px;
+}
+.hero-kicker::before {
+  content: ""; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--accent);
+}
+h1 {
+  font-size: clamp(1.9rem, 4.4vw, 3rem);
+  line-height: 1.15; letter-spacing: -0.015em;
+  color: var(--text-dark); margin-bottom: 16px;
+}
+.hero p.lead {
+  font-size: clamp(1rem, 1.5vw, 1.1rem); color: var(--text-muted);
+  max-width: 56ch; margin-bottom: 26px;
+}
+.hero-search {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-md); padding: 6px 6px 6px 14px;
+  max-width: 540px; box-shadow: var(--shadow-sm);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.hero-search:focus-within {
+  border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-soft);
+}
+.hero-search svg { width: 18px; height: 18px; color: var(--text-muted); flex: none; }
+.hero-search input {
+  flex: 1; border: 0; outline: none; background: transparent;
+  font: inherit; color: var(--text-dark); min-width: 0; padding: 8px 0;
+}
+.hero-cta-row {
+  display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; align-items: center;
+}
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-weight: 700; font-size: 0.95rem; border-radius: var(--radius-sm);
+  padding: 11px 20px; cursor: pointer; border: 1px solid transparent;
+  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+}
+.btn:hover { text-decoration: none; transform: translateY(-1px); }
+.btn-primary { background: var(--primary); color: var(--white); box-shadow: var(--shadow-sm); }
+.btn-primary:hover { background: var(--primary-dark); }
+.btn-secondary {
+  background: var(--surface); color: var(--primary); border-color: var(--border);
+}
+.btn-secondary:hover { border-color: var(--primary); background: var(--primary-soft); }
+.btn-sm { padding: 8px 14px; font-size: 0.85rem; }
+.hero-panel {
+  position: relative; background: var(--primary); color: var(--white);
+  border-radius: var(--radius-lg); padding: clamp(1.5rem, 3vw, 2.1rem);
+  box-shadow: var(--shadow-lg);
+}
+.hero-panel h2 {
+  font-size: 1.12rem; margin-bottom: 14px; letter-spacing: 0.01em;
+}
+.hero-panel ul { list-style: none; display: grid; gap: 12px; }
+.hero-panel li {
+  display: flex; gap: 12px; align-items: flex-start;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-sm); padding: 12px 14px;
+  font-size: 0.92rem;
+}
+.hero-panel li strong { display: block; font-size: 0.95rem; }
+.hero-panel li span.dot {
+  flex: none; width: 10px; height: 10px; border-radius: 50%;
+  background: var(--accent); margin-top: 6px;
+}
+.hero-deco {
+  position: absolute; border: 2px solid var(--accent); border-radius: 50%;
+  opacity: 0.35; pointer-events: none;
+}
+.hero-deco.one { width: 220px; height: 220px; right: -70px; top: -80px; }
+.hero-deco.two { width: 130px; height: 130px; left: -45px; bottom: -50px; }
+.hero-deco.three {
+  width: 60px; height: 3px; border: 0; border-radius: 2px;
+  background: var(--accent); opacity: 0.5; left: 8%; top: 18%;
+}
+
+/* Sections */
+section { padding: clamp(2.5rem, 5vw, 4rem) 0; }
+section[id] { scroll-margin-top: 84px; }
+.section-head { max-width: 720px; margin-bottom: clamp(1.5rem, 3vw, 2.25rem); }
+.section-kicker {
+  display: inline-block; color: var(--accent-dark); background: var(--accent-soft);
+  border-radius: 999px; padding: 4px 12px; font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 12px;
+}
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2.05rem); line-height: 1.2;
+  letter-spacing: -0.01em; margin-bottom: 10px;
+}
+.section-head p { color: var(--text-muted); }
+
+/* Stats */
+.stats { background: var(--surface-alt); border-block: 1px solid var(--border); }
+.stats-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+}
+.stat-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-md); padding: 22px 24px;
+  box-shadow: var(--shadow-sm); position: relative; overflow: hidden;
+}
+.stat-card::after {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0;
+  width: 4px; background: var(--accent);
+}
+.stat-value {
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem); font-weight: 800;
+  color: var(--primary); line-height: 1.1;
+}
+.stat-label {
+  font-size: 0.9rem; color: var(--text-muted); font-weight: 600; margin-top: 4px;
+}
+.stat-note { font-size: 0.8rem; color: var(--text-muted); margin-top: 8px; }
+
+/* Toolbar and filters */
+.toolbar {
+  display: grid; gap: 14px; margin-bottom: 22px;
+}
+.search-box {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-md); padding: 4px 6px 4px 14px;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.search-box:focus-within {
+  border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-soft);
+}
+.search-box svg { width: 18px; height: 18px; color: var(--primary); flex: none; }
+.search-box input {
+  flex: 1; border: 0; outline: none; background: transparent;
+  font: inherit; padding: 10px 0; min-width: 0; color: var(--text-dark);
+}
+.search-clear {
+  border: 0; background: var(--surface-alt); color: var(--text-dark);
+  font-size: 0.8rem; font-weight: 700; padding: 8px 12px;
+  border-radius: var(--radius-sm); cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.search-clear:hover { background: var(--primary-soft); color: var(--primary); }
+.filter-row {
+  display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between;
+}
+.chip-wrap { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  border: 1px solid var(--border); background: var(--surface);
+  color: var(--text-dark); font-size: 0.83rem; font-weight: 600;
+  padding: 7px 13px; border-radius: 999px; cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.chip:hover { border-color: var(--primary); color: var(--primary); }
+.chip[aria-pressed="true"] {
+  background: var(--primary); border-color: var(--primary); color: var(--white);
+}
+.vendor-select {
+  font: inherit; font-size: 0.88rem; font-weight: 600;
+  border: 1px solid var(--border); background: var(--surface);
+  color: var(--text-dark); border-radius: var(--radius-sm);
+  padding: 9px 12px; cursor: pointer; max-width: 100%;
+}
+.vendor-select:focus-visible { border-color: var(--primary); }
+.result-meta {
+  display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center;
+  font-size: 0.9rem; color: var(--text-muted); margin-bottom: 18px;
+}
+.result-meta strong { color: var(--primary); }
+.search-hint { font-size: 0.84rem; color: var(--text-muted); }
+
+/* Exam cards */
+.card-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+.exam-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-md); padding: 20px;
+  display: flex; flex-direction: column; gap: 12px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.exam-card:hover {
+  transform: translateY(-3px); box-shadow: var(--shadow-md);
+  border-color: #c3d2e4;
+}
+.exam-card.is-hidden { display: none; }
+.card-head {
+  display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between;
+}
+.badge-code {
+  background: var(--primary); color: var(--white);
+  font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700;
+  padding: 5px 10px; border-radius: 6px; letter-spacing: 0.02em;
+  word-break: break-word;
+}
+.badge-cat {
+  background: var(--accent-soft); color: var(--accent-dark);
+  border: 1px solid #f0dcc4;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em;
+  text-transform: uppercase; padding: 4px 10px; border-radius: 999px;
+}
+.exam-title { font-size: 1.05rem; line-height: 1.35; }
+.exam-meta {
+  font-size: 0.82rem; color: var(--text-muted); font-weight: 600;
+}
+.exam-desc { font-size: 0.92rem; color: var(--text-dark); }
+.knowledge {
+  background: var(--surface-alt); border-left: 3px solid var(--accent);
+  border-radius: 6px; padding: 12px 14px;
+}
+.knowledge h4 {
+  font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--accent-dark); margin-bottom: 8px;
+}
+.tag-list {
+  list-style: none; display: flex; flex-wrap: wrap; gap: 6px;
+}
+.tag-list li {
+  background: var(--surface); border: 1px solid var(--border);
+  color: var(--text-dark); font-size: 0.78rem; font-weight: 600;
+  padding: 4px 9px; border-radius: 999px;
+}
+.exam-tip { font-size: 0.88rem; color: var(--text-muted); }
+.exam-tip strong { color: var(--primary); }
+.exam-actions { margin-top: auto; display: grid; gap: 8px; }
+.exam-actions .btn { width: 100%; }
+.resource-list { list-style: none; display: grid; gap: 8px; }
+.resource-list .btn { width: 100%; }
+.res-url {
+  font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted);
+  word-break: break-all; line-height: 1.5;
+}
+mark {
+  background: #fde7c8; color: var(--text-dark);
+  padding: 0 2px; border-radius: 3px;
+}
+.empty-state {
+  display: none; text-align: center; padding: 48px 20px;
+  background: var(--surface); border: 1px dashed var(--border);
+  border-radius: var(--radius-md);
+}
+.empty-state.is-visible { display: block; }
+.empty-state h3 { margin-bottom: 8px; font-size: 1.15rem; }
+.empty-state p { color: var(--text-muted); margin-bottom: 16px; }
+
+/* Prep guide */
+.prep { background: var(--surface); border-block: 1px solid var(--border); }
+.prep-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 18px;
+}
+.prep-card {
+  background: var(--surface-alt); border: 1px solid var(--border);
+  border-radius: var(--radius-md); padding: 20px;
+  border-top: 3px solid var(--accent);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.prep-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+.prep-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 9px;
+  background: var(--primary); color: var(--white);
+  font-weight: 800; font-size: 0.9rem; margin-bottom: 12px;
+}
+.prep-card h3 { font-size: 1.02rem; margin-bottom: 8px; }
+.prep-card p { font-size: 0.9rem; color: var(--text-muted); }
+
+/* FAQ */
+.faq-list { display: grid; gap: 12px; max-width: 860px; }
+.faq-item {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-md); overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.faq-item.is-open { border-color: var(--primary); box-shadow: var(--shadow-sm); }
+.faq-item h3 { margin: 0; }
+.faq-question {
+  width: 100%; display: flex; align-items: center; justify-content: space-between;
+  gap: 14px; text-align: left; background: none; border: 0;
+  font: inherit; font-weight: 700; font-size: 1rem; color: var(--text-dark);
+  padding: 18px 20px; cursor: pointer;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+.faq-question:hover { color: var(--primary); background: var(--surface-alt); }
+.faq-question .faq-icon {
+  flex: none; width: 26px; height: 26px; border-radius: 50%;
+  background: var(--primary-soft); color: var(--primary);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 1.05rem; line-height: 1; font-weight: 700;
+  transition: transform 0.25s ease, background 0.2s ease, color 0.2s ease;
+}
+.faq-item.is-open .faq-icon {
+  transform: rotate(45deg); background: var(--accent); color: var(--white);
+}
+.faq-panel-wrap {
+  display: grid; grid-template-rows: 0fr;
+  transition: grid-template-rows 0.28s ease;
+}
+.faq-item.is-open .faq-panel-wrap { grid-template-rows: 1fr; }
+.faq-panel { overflow: hidden; }
+.faq-panel p {
+  padding: 0 20px 18px; color: var(--text-muted); font-size: 0.94rem;
+}
+
+/* Footer */
+.site-footer {
+  background: var(--primary-dark); color: #d7e2f1;
+  padding: clamp(2.5rem, 5vw, 3.5rem) 0 24px;
+}
+.footer-grid {
+  display: grid; grid-template-columns: 1.3fr 0.8fr 1fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  padding-bottom: 28px; border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+.site-footer .brand { color: var(--white); margin-bottom: 12px; }
+.footer-about { font-size: 0.9rem; max-width: 40ch; }
+.site-footer h3 {
+  color: var(--white); font-size: 0.85rem; text-transform: uppercase;
+  letter-spacing: 0.07em; margin-bottom: 14px;
+}
+.footer-links { list-style: none; display: grid; gap: 8px; }
+.footer-links a {
+  color: #d7e2f1; font-size: 0.9rem;
+  transition: color 0.15s ease;
+}
+.footer-links a:hover { color: var(--white); }
+.footer-bottom {
+  padding-top: 20px; display: grid; gap: 10px;
+  font-size: 0.82rem; color: #aebfd6;
+}
+.disclaimer {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-sm); padding: 12px 14px;
+  font-size: 0.82rem; line-height: 1.6;
+}
+
+/* Reveal animation */
+.reveal {
+  opacity: 0; transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* Responsive */
+@media (max-width: 980px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-panel { max-width: 560px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 820px) {
+  .header-nav {
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: var(--surface); border-bottom: 1px solid var(--border);
+    flex-direction: column; align-items: stretch; gap: 2px;
+    padding: 10px 20px 16px; box-shadow: var(--shadow-md);
+    display: none;
+  }
+  .header-nav.is-open { display: flex; }
+  .header-nav a { padding: 12px 10px; }
+  .nav-toggle { display: inline-flex; }
+  .stats-grid { grid-template-columns: 1fr; }
+  .filter-row { flex-direction: column; align-items: stretch; }
+  .chip-wrap { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 6px; }
+  .chip { flex: none; }
+  .vendor-select { width: 100%; }
+}
+@media (max-width: 640px) {
+  .container { width: min(1180px, 100% - 1.5rem); }
+  .card-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .hero-cta-row .btn { width: 100%; }
+}
+@media (max-width: 380px) {
+  .badge-code { font-size: 0.72rem; }
+  .stat-value { font-size: 1.6rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      </span>
+      <span>CertPrep Hub<small>Exam Knowledge Portal</small></span>
+    </a>
+    <nav class="header-nav" id="primary-nav" aria-label="Primary">
+      <a href="#statistics">Overview</a>
+      <a href="#exam-resources">Exam Resources</a>
+      <a href="#preparation-guide">Preparation Guide</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="header-search-btn" type="button" aria-label="Go to exam search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      </button>
+      <button class="icon-btn nav-toggle" id="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-nav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progress-bar"></div></div>
+</header>
+
+<main id="main">
+  <span id="top"></span>
+
+  <!-- Hero -->
+  <section class="hero" id="hero" aria-labelledby="hero-title">
+    <div class="hero-deco one" aria-hidden="true"></div>
+    <div class="hero-deco two" aria-hidden="true"></div>
+    <div class="hero-deco three" aria-hidden="true"></div>
+    <div class="container hero-grid">
+      <div>
+        <p class="hero-kicker">Certification Knowledge Portal</p>
+        <h1 id="hero-title">Certification Exam Preparation Resources</h1>
+        <p class="lead">CertPrep Hub is a study portal for certification candidates. Each exam entry explains what the exam focuses on, lists its key knowledge areas, and gives a practical study approach, together with curated resource links you can open directly. Use it to plan your preparation, understand the subject matter, and find the right material for every exam on your list.</p>
+        <form class="hero-search" id="hero-search-form" role="search" aria-label="Search exams">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <label class="sr-only" for="hero-search">Search exams by code, name, vendor, or topic</label>
+          <input type="search" id="hero-search" placeholder="Search by exam code, name, vendor, or topic" autocomplete="off">
+          <button class="btn btn-primary btn-sm" type="submit">Search</button>
+        </form>
+        <div class="hero-cta-row">
+          <a class="btn btn-primary" href="#exam-resources">Browse Exam Resources</a>
+          <a class="btn btn-secondary" href="#preparation-guide">Open Preparation Guide</a>
+        </div>
+      </div>
+      <aside class="hero-panel reveal" aria-label="What this portal offers">
+        <h2>What you will find in every exam entry</h2>
+        <ul>
+          <li><span class="dot" aria-hidden="true"></span><span><strong>Exam focus summary</strong>What the certification measures and where it sits in its field.</span></li>
+          <li><span class="dot" aria-hidden="true"></span><span><strong>Key knowledge areas</strong>Technologies, concepts, and skills worth reviewing first.</span></li>
+          <li><span class="dot" aria-hidden="true"></span><span><strong>Study approach</strong>A concrete way to structure your preparation for that exam.</span></li>
+          <li><span class="dot" aria-hidden="true"></span><span><strong>Resource links</strong>Direct links to study material for the exact exam code.</span></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Statistics -->
+  <section class="stats" id="statistics" aria-labelledby="stats-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-kicker">At a glance</p>
+        <h2 id="stats-title">Library Statistics</h2>
+        <p>These numbers are calculated automatically from the exam catalog below and update whenever the catalog changes.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card reveal">
+          <div class="stat-value" id="stat-exams">0</div>
+          <div class="stat-label">Total exams</div>
+          <p class="stat-note">Individual exam codes with dedicated knowledge notes.</p>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-value" id="stat-resources">0</div>
+          <div class="stat-label">Available resources</div>
+          <p class="stat-note">Direct resource links across all exam entries.</p>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-value" id="stat-categories">0</div>
+          <div class="stat-label">Certification categories</div>
+          <p class="stat-note">Subject areas from cybersecurity to supply chain.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Exam Resources -->
+  <section id="exam-resources" aria-labelledby="exams-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-kicker">Exam knowledge base</p>
+        <h2 id="exams-title">Exam Resources and Knowledge Notes</h2>
+        <p>Browse by category or vendor, or search across exam codes, names, descriptions, knowledge areas, and preparation topics. Every resource link goes to the exact URL provided for that exam.</p>
+      </div>
+
+      <div class="toolbar reveal">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <label class="sr-only" for="exam-search">Search exam resources</label>
+          <input type="search" id="exam-search" placeholder="Search exams, topics, or technologies (for example: Kubernetes, Oracle, cybersecurity)" autocomplete="off">
+          <button class="search-clear" id="search-clear" type="button">Clear</button>
+        </div>
+        <div class="filter-row">
+          <div class="chip-wrap" id="category-chips" role="group" aria-label="Filter exams by category"></div>
+          <label class="sr-only" for="vendor-select">Filter exams by vendor</label>
+          <select class="vendor-select" id="vendor-select">
+            <option value="all">All vendors</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="result-meta">
+        <p id="result-count" aria-live="polite">Showing all exams</p>
+        <p class="search-hint" id="search-hint">Tip: search by exam code (such as MB-800), a vendor (such as Cisco), or a topic (such as threat prevention).</p>
+      </div>
+
+      <div class="card-grid" id="exam-grid">
+
+        <article class="exam-card reveal" data-code="Workday-Procure-to-Pay" data-category="ERP and Business Applications" data-vendor="Workday">
+          <div class="card-head">
+            <span class="badge-code">Workday-Procure-to-Pay</span>
+            <span class="badge-cat">ERP and Business Applications</span>
+          </div>
+          <h3 class="exam-title hl">Workday Procure-to-Pay Business Process</h3>
+          <p class="exam-meta hl">Vendor: Workday</p>
+          <p class="exam-desc hl">Covers the Workday Procure-to-Pay flow from requisition to settlement, including catalogs, supplier accounts, purchase orders, receipts, supplier invoices, and payments. Candidates learn how business processes, approvals, and accounting entries keep purchasing and payables accurate and auditable.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Requisitions</li><li>Purchase Orders</li><li>Supplier Invoices</li><li>Payments</li><li>Business Process Configuration</li><li>Spend Management</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Walk one purchase from requisition to payment inside a Workday tenant and record every approval step and accounting result along the way.</p>
+          <div class="exam-actions">
+            <ul class="resource-list">
+              <li><a class="btn btn-primary btn-sm" href="https://wonderfulday.dk/forum/traade/7063/updated-2026-workday-procure-to-pay-exam-dumps-verified-questions-study-guide">View Workday Resource on wonderfulday.dk</a><span class="res-url">https://wonderfulday.dk/forum/traade/7063/updated-2026-workday-procure-to-pay-exam-dumps-verified-questions-study-guide</span></li>
+              <li><a class="btn btn-primary btn-sm" href="https://www.instagram.com/prof.davidcooper/p/Dds0DS-CshK/">View Workday Resource on Instagram</a><span class="res-url">https://www.instagram.com/prof.davidcooper/p/Dds0DS-CshK/</span></li>
+              <li><a class="btn btn-primary btn-sm" href="https://fanspo.com/nba/s/wizards/p/enU-SxOc2dejYs/no-1-updated-workday-procure-to-pay-dumps-practice-test-2026">View Workday Resource on fanspo.com</a><span class="res-url">https://fanspo.com/nba/s/wizards/p/enU-SxOc2dejYs/no-1-updated-workday-procure-to-pay-dumps-practice-test-2026</span></li>
+              <li><a class="btn btn-primary btn-sm" href="https://forum.linsoul.com/d/7519-workday-procure-to-pay-exam-dumps-pdf-2026-reliable-questions-answers">View Workday Resource on linsoul.com</a><span class="res-url">https://forum.linsoul.com/d/7519-workday-procure-to-pay-exam-dumps-pdf-2026-reliable-questions-answers</span></li>
+              <li><a class="btn btn-primary btn-sm" href="https://selene427.tawk.help/article/workday-procure-to-pay-dumps-improve-your-exam-readiness">View Workday Resource on tawk.help</a><span class="res-url">https://selene427.tawk.help/article/workday-procure-to-pay-dumps-improve-your-exam-readiness</span></li>
+              <li><a class="btn btn-primary btn-sm" href="https://bestdori.com/community/posts/254490/selene427-Updated-for-2026-Workday-Procure-to-Pay-Dumps">View Workday Resource on bestdori.com</a><span class="res-url">https://bestdori.com/community/posts/254490/selene427-Updated-for-2026-Workday-Procure-to-Pay-Dumps</span></li>
+              <li><a class="btn btn-primary btn-sm" href="https://profit.ly/user/kurrkupps/blog/no1-workday-procure-to-pay-pdf-dumps--updated-2026-practice-questions">View Workday Resource on profit.ly</a><span class="res-url">https://profit.ly/user/kurrkupps/blog/no1-workday-procure-to-pay-pdf-dumps--updated-2026-practice-questions</span></li>
+              <li><a class="btn btn-primary btn-sm" href="https://app.talkshoe.com/show/no-1-verified-workday-procure-to-pay-exam-dumps-with-authentic-questions-answers">View Workday Resource on talkshoe.com</a><span class="res-url">https://app.talkshoe.com/show/no-1-verified-workday-procure-to-pay-exam-dumps-with-authentic-questions-answers</span></li>
+              <li><a class="btn btn-primary btn-sm" href="https://xfdev.yesterdaystractors.com/index.php?threads/1879257/">View Workday Resource on yesterdaystractors.com</a><span class="res-url">https://xfdev.yesterdaystractors.com/index.php?threads/1879257/</span></li>
+              <li><a class="btn btn-primary btn-sm" href="https://help.fumotousa.com/en-US/Community/Post/47655">View Workday Resource on fumotousa.com</a><span class="res-url">https://help.fumotousa.com/en-US/Community/Post/47655</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="AD0-E704" data-category="Software Development" data-vendor="Adobe">
+          <div class="card-head">
+            <span class="badge-code">AD0-E704</span>
+            <span class="badge-cat">Software Development</span>
+          </div>
+          <h3 class="exam-title hl">Adobe Certified Master Magento Commerce Architect</h3>
+          <p class="exam-meta hl">Vendor: Adobe</p>
+          <p class="exam-desc hl">Advanced architecture exam for Adobe Commerce (Magento). It focuses on solution design for large storefronts, including scalability, caching strategy, integrations with ERP and payment systems, customization rules, and deployment topology.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Adobe Commerce Architecture</li><li>Caching and Indexing</li><li>System Integrations</li><li>Customization Rules</li><li>Performance Design</li><li>Deployment Topology</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Design one multi-store commerce architecture and defend every decision against upgrade safety and scale requirements.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://wonderfulday.dk/forum/traade/7064/updated-2026-adobe-ad0-e704-exam-dumps-verified-questions-study-guide">View AD0-E704 Resource</a>
+            <span class="res-url">https://wonderfulday.dk/forum/traade/7064/updated-2026-adobe-ad0-e704-exam-dumps-verified-questions-study-guide</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="PC-BA-FBA-20" data-category="Business and Management" data-vendor="BCS">
+          <div class="card-head">
+            <span class="badge-code">PC-BA-FBA-20</span>
+            <span class="badge-cat">Business and Management</span>
+          </div>
+          <h3 class="exam-title hl">BCS Foundation Certificate in Business Analysis</h3>
+          <p class="exam-meta hl">Vendor: BCS</p>
+          <p class="exam-desc hl">Foundation exam covering the business analysis role and discipline. It tests understanding of investigation techniques, stakeholder analysis, requirements engineering, business process modeling, gap analysis, and solution assessment.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Requirements Engineering</li><li>Stakeholder Analysis</li><li>Process Modeling</li><li>Investigation Techniques</li><li>Gap Analysis</li><li>Solution Assessment</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Learn what each analysis technique is for first, then practice matching short business scenarios to the right technique.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://wonderfulday.dk/forum/traade/7065/updated-2026-pc-ba-fba-20-dumps-verified-questions-study-guide">View PC-BA-FBA-20 Resource</a>
+            <span class="res-url">https://wonderfulday.dk/forum/traade/7065/updated-2026-pc-ba-fba-20-dumps-verified-questions-study-guide</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="MB-800" data-category="ERP and Business Applications" data-vendor="Microsoft">
+          <div class="card-head">
+            <span class="badge-code">MB-800</span>
+            <span class="badge-cat">ERP and Business Applications</span>
+          </div>
+          <h3 class="exam-title hl">Microsoft Dynamics 365 Business Central Functional Consultant</h3>
+          <p class="exam-meta hl">Vendor: Microsoft</p>
+          <p class="exam-desc hl">Functional consulting exam for Dynamics 365 Business Central. It covers configuring finance, sales, purchasing, inventory, and reporting for small and mid-sized businesses, plus role tailoring and integration with Power Platform tools.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Finance Configuration</li><li>Sales and Purchasing</li><li>Inventory Management</li><li>Role Centers</li><li>Power Platform Integration</li><li>Data Migration</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Practice full order-to-cash and purchase-to-pay cycles in a Business Central sandbox until each setup decision is clear.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://wonderfulday.dk/forum/traade/7066/updated-2026-microsoft-mb-800-dumps-verified-questions-study-guide">View MB-800 Resource</a>
+            <span class="res-url">https://wonderfulday.dk/forum/traade/7066/updated-2026-microsoft-mb-800-dumps-verified-questions-study-guide</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="1Z0-084" data-category="Databases" data-vendor="Oracle">
+          <div class="card-head">
+            <span class="badge-code">1Z0-084</span>
+            <span class="badge-cat">Databases</span>
+          </div>
+          <h3 class="exam-title hl">Oracle Database 19c Performance Management and Tuning</h3>
+          <p class="exam-meta hl">Vendor: Oracle</p>
+          <p class="exam-desc hl">Professional exam on diagnosing and improving Oracle Database 19c performance. Topics include AWR and ADDM reporting, SQL monitoring, optimizer statistics, execution plans, and memory and IO management.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>AWR and ADDM</li><li>SQL Tuning</li><li>Execution Plans</li><li>Optimizer Statistics</li><li>Memory Management</li><li>IO and Contention</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Read sample AWR reports and practice identifying the real bottleneck before selecting any tuning action.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://wonderfulday.dk/forum/traade/7067/updated-2026-oracle-1z0-084-dumps-verified-questions-study-guide">View 1Z0-084 Resource</a>
+            <span class="res-url">https://wonderfulday.dk/forum/traade/7067/updated-2026-oracle-1z0-084-dumps-verified-questions-study-guide</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="100-160" data-category="Cybersecurity" data-vendor="Cisco">
+          <div class="card-head">
+            <span class="badge-code">100-160</span>
+            <span class="badge-cat">Cybersecurity</span>
+          </div>
+          <h3 class="exam-title hl">Cisco Certified Support Technician Cybersecurity</h3>
+          <p class="exam-meta hl">Vendor: Cisco</p>
+          <p class="exam-desc hl">Entry-level cybersecurity exam covering essential security principles, basic network security, endpoint security concepts, vulnerability assessment and risk management, and first-response incident handling.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Security Principles</li><li>Network Security Basics</li><li>Endpoint Security</li><li>Vulnerability Assessment</li><li>Risk Management</li><li>Incident Handling</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Build a small home lab where you can watch how common attacks behave and how basic controls stop them.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://wonderfulday.dk/forum/traade/7068/updated-2026-cisco-100-160-dumps-verified-questions-study-guide">View 100-160 Resource</a>
+            <span class="res-url">https://wonderfulday.dk/forum/traade/7068/updated-2026-cisco-100-160-dumps-verified-questions-study-guide</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="DEP-2025" data-category="IT Service Management" data-vendor="Apple">
+          <div class="card-head">
+            <span class="badge-code">DEP-2025</span>
+            <span class="badge-cat">IT Service Management</span>
+          </div>
+          <h3 class="exam-title hl">Apple Deployment and Management</h3>
+          <p class="exam-meta hl">Vendor: Apple</p>
+          <p class="exam-desc hl">Exam for IT professionals deploying iPhone, iPad, and Mac at scale. It covers automated device enrollment, Apple Business Manager, mobile device management, configuration profiles, app distribution, and device security.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Automated Device Enrollment</li><li>Apple Business Manager</li><li>MDM Solutions</li><li>Configuration Profiles</li><li>App Deployment</li><li>Device Security</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Enroll test devices in a trial MDM and push configuration profiles and apps so every step becomes familiar.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://wonderfulday.dk/forum/traade/7069/updated-2026-dep-2025-dumps-verified-questions-study-guide">View DEP-2025 Resource</a>
+            <span class="res-url">https://wonderfulday.dk/forum/traade/7069/updated-2026-dep-2025-dumps-verified-questions-study-guide</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="350-801" data-category="Networking and Telecom" data-vendor="Cisco">
+          <div class="card-head">
+            <span class="badge-code">350-801</span>
+            <span class="badge-cat">Networking and Telecom</span>
+          </div>
+          <h3 class="exam-title hl">Implementing and Operating Cisco Collaboration Core Technologies</h3>
+          <p class="exam-meta hl">Vendor: Cisco</p>
+          <p class="exam-desc hl">Core exam for CCNP Collaboration covering infrastructure and design, call control, media resources, endpoints, QoS, and security for Cisco voice and video deployments.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Call Control</li><li>Cisco Unified CM</li><li>QoS</li><li>Media Resources</li><li>Collaboration Endpoints</li><li>Collaboration Security</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Trace a complete call through every component and note exactly where digit manipulation and QoS take effect.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://wonderfulday.dk/forum/traade/7070/updated-for-2026-cisco-350-801-dumps-verified-questions-study-guide">View 350-801 Resource</a>
+            <span class="res-url">https://wonderfulday.dk/forum/traade/7070/updated-for-2026-cisco-350-801-dumps-verified-questions-study-guide</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="SPLK-3001" data-category="Cybersecurity" data-vendor="Splunk">
+          <div class="card-head">
+            <span class="badge-code">SPLK-3001</span>
+            <span class="badge-cat">Cybersecurity</span>
+          </div>
+          <h3 class="exam-title hl">Splunk Enterprise Security Certified Admin</h3>
+          <p class="exam-meta hl">Vendor: Splunk</p>
+          <p class="exam-desc hl">Administration exam for Splunk Enterprise Security. It covers ES deployment and configuration, data onboarding for security use cases, notable events, risk-based alerting, and ES content management.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>ES Deployment</li><li>Data Onboarding</li><li>Notable Events</li><li>Risk-Based Alerting</li><li>Threat Intelligence</li><li>Content Management</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Configure ES content and risk scoring in a lab fed with realistic security data, then tune the result like a live SOC.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://wonderfulday.dk/forum/traade/7071/updated-2026-splk-3001-dumps-verified-questions-study-guide">View SPLK-3001 Resource</a>
+            <span class="res-url">https://wonderfulday.dk/forum/traade/7071/updated-2026-splk-3001-dumps-verified-questions-study-guide</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="L5M4" data-category="Procurement and Supply Chain" data-vendor="CIPS">
+          <div class="card-head">
+            <span class="badge-code">L5M4</span>
+            <span class="badge-cat">Procurement and Supply Chain</span>
+          </div>
+          <h3 class="exam-title hl">CIPS Advanced Contract and Financial Management</h3>
+          <p class="exam-meta hl">Vendor: CIPS</p>
+          <p class="exam-desc hl">Level 5 core module on the financial side of contract management. It covers pricing models, cost and budget management, financial reporting in contracts, and measuring contract performance over the agreement life cycle.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Pricing Models</li><li>Contract Cost Control</li><li>Budgets</li><li>Performance Measurement</li><li>Financial Reporting</li><li>Change Management</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Practice structured written answers on short commercial cases, since clear contract reasoning earns most of the marks.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://wonderfulday.dk/forum/traade/7072/cips-l5m4-exam-dumps-2026-real-questions-verified-answers">View L5M4 Resource</a>
+            <span class="res-url">https://wonderfulday.dk/forum/traade/7072/cips-l5m4-exam-dumps-2026-real-questions-verified-answers</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="PMI-CPMAI" data-category="Data and AI" data-vendor="PMI">
+          <div class="card-head">
+            <span class="badge-code">PMI-CPMAI</span>
+            <span class="badge-cat">Data and AI</span>
+          </div>
+          <h3 class="exam-title hl">Certified Professional in Machine Learning and AI</h3>
+          <p class="exam-meta hl">Vendor: PMI</p>
+          <p class="exam-desc hl">Professional credential covering the full AI project life cycle: problem framing, data sourcing and preparation, model building and evaluation, deployment, monitoring, and responsible AI practices.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>AI Project Life Cycle</li><li>Problem Framing</li><li>Data Preparation</li><li>Model Evaluation</li><li>Deployment and Monitoring</li><li>Responsible AI</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Document one complete AI project case and record the risks and checkpoints at every life cycle step.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://www.instagram.com/prof.davidcooper/p/Dds0J-LCt6N/">View PMI-CPMAI Resource</a>
+            <span class="res-url">https://www.instagram.com/prof.davidcooper/p/Dds0J-LCt6N/</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="L5M6" data-category="Procurement and Supply Chain" data-vendor="CIPS">
+          <div class="card-head">
+            <span class="badge-code">L5M6</span>
+            <span class="badge-cat">Procurement and Supply Chain</span>
+          </div>
+          <h3 class="exam-title hl">CIPS Category Management</h3>
+          <p class="exam-meta hl">Vendor: CIPS</p>
+          <p class="exam-desc hl">Level 5 elective on category management as a strategic approach to spend. It covers expenditure analysis, category strategy development, sourcing levers, market analysis, and engaging stakeholders around a category plan.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Spend Analysis</li><li>Category Strategy</li><li>Sourcing Levers</li><li>Market Analysis</li><li>Stakeholder Management</li><li>Strategy Implementation</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Build one complete category strategy for a spend area you know well and check each step against the syllabus.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://www.instagram.com/prof.davidcooper/p/Dds0PncCsB3/">View L5M6 Resource</a>
+            <span class="res-url">https://www.instagram.com/prof.davidcooper/p/Dds0PncCsB3/</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="AD0-E134" data-category="Software Development" data-vendor="Adobe">
+          <div class="card-head">
+            <span class="badge-code">AD0-E134</span>
+            <span class="badge-cat">Software Development</span>
+          </div>
+          <h3 class="exam-title hl">Adobe Experience Manager Sites Developer</h3>
+          <p class="exam-meta hl">Vendor: Adobe</p>
+          <p class="exam-desc hl">Developer exam for Adobe Experience Manager Sites. It covers component and template development, content modeling, OSGi services and workflows, and troubleshooting real development and deployment issues on AEM.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>AEM Sites Architecture</li><li>Components and Templates</li><li>OSGi Services</li><li>Workflows</li><li>Content Models</li><li>Deployment Tooling</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Generate a project with the AEM archetype and deploy it to a local instance to fix the build and deployment flow in memory.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://www.instagram.com/prof.davidcooper/p/Dds0WpKihmo/">View AD0-E134 Resource</a>
+            <span class="res-url">https://www.instagram.com/prof.davidcooper/p/Dds0WpKihmo/</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="CISMP-V9" data-category="Cybersecurity" data-vendor="BCS">
+          <div class="card-head">
+            <span class="badge-code">CISMP-V9</span>
+            <span class="badge-cat">Cybersecurity</span>
+          </div>
+          <h3 class="exam-title hl">Certificate in Information Security Management Principles</h3>
+          <p class="exam-meta hl">Vendor: BCS</p>
+          <p class="exam-desc hl">Foundation exam on information security management in version 9 of the syllabus. It covers core security concepts, risk management, governance and legislation, technical controls, incident management, and business continuity.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Risk Management</li><li>Security Governance</li><li>Security Legislation</li><li>Incident Management</li><li>Business Continuity</li><li>Technical Controls</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Attach one real regulation or incident example to every concept so the definitions stay memorable under exam pressure.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://www.instagram.com/prof.davidcooper/p/Dds0cBdCgG7/">View CISMP-V9 Resource</a>
+            <span class="res-url">https://www.instagram.com/prof.davidcooper/p/Dds0cBdCgG7/</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="Plat-Dev-301" data-category="Software Development" data-vendor="Salesforce">
+          <div class="card-head">
+            <span class="badge-code">Plat-Dev-301</span>
+            <span class="badge-cat">Software Development</span>
+          </div>
+          <h3 class="exam-title hl">Salesforce Platform Developer II</h3>
+          <p class="exam-meta hl">Vendor: Salesforce</p>
+          <p class="exam-desc hl">Advanced development exam for the Salesforce platform. It covers Apex and Lightning development, process automation, integration with external systems, testing, asynchronous processing, and performance-aware design within governor limits.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Apex and Triggers</li><li>Lightning Web Components</li><li>Integration and APIs</li><li>Testing and Debugging</li><li>Async Processing</li><li>Governor Limits</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Complete the advanced superbadge style projects first; they build the practical depth the exam expects.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://www.instagram.com/prof.davidcooper/p/Dds0hT9ik3n/">View Plat-Dev-301 Resource</a>
+            <span class="res-url">https://www.instagram.com/prof.davidcooper/p/Dds0hT9ik3n/</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="ICCGO" data-category="Governance and Risk" data-vendor="AGRC">
+          <div class="card-head">
+            <span class="badge-code">ICCGO</span>
+            <span class="badge-cat">Governance and Risk</span>
+          </div>
+          <h3 class="exam-title hl">International Certified Corporate Governance Officer</h3>
+          <p class="exam-meta hl">Vendor: AGRC</p>
+          <p class="exam-desc hl">AGRC certificate covering corporate governance concepts and implementation. It addresses governance principles and stakeholders, transparency and disclosure, risk oversight, internal audit, anti-corruption mechanisms, and governance reporting.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Governance Principles</li><li>Stakeholder Roles</li><li>Transparency and Disclosure</li><li>Risk Oversight</li><li>Internal Audit</li><li>Governance Reporting</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Outline a short corporate governance report and keep the duties of each stakeholder distinctly separate.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://www.instagram.com/prof.davidcooper/p/Dds0nIpit-_/">View ICCGO Resource</a>
+            <span class="res-url">https://www.instagram.com/prof.davidcooper/p/Dds0nIpit-_/</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="CPACC" data-category="Design and Accessibility" data-vendor="IAAP">
+          <div class="card-head">
+            <span class="badge-code">CPACC</span>
+            <span class="badge-cat">Design and Accessibility</span>
+          </div>
+          <h3 class="exam-title hl">Certified Professional in Accessibility Core Competencies</h3>
+          <p class="exam-meta hl">Vendor: IAAP</p>
+          <p class="exam-desc hl">Foundational accessibility credential covering disability categories and assistive technologies, accessibility laws and standards around the world, and universal and inclusive design principles for products and services.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>WCAG Standards</li><li>Accessibility Law</li><li>Disability Types</li><li>Assistive Technologies</li><li>Universal Design</li><li>Inclusive Practice</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Study WCAG by principle and pair every guideline with one concrete interface example you can picture.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://www.instagram.com/prof.davidcooper/p/Dds1Cccih3I/">View CPACC Resource</a>
+            <span class="res-url">https://www.instagram.com/prof.davidcooper/p/Dds1Cccih3I/</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="CNPA" data-category="Cloud and Platform" data-vendor="Linux Foundation">
+          <div class="card-head">
+            <span class="badge-code">CNPA</span>
+            <span class="badge-cat">Cloud and Platform</span>
+          </div>
+          <h3 class="exam-title hl">Certified Cloud Native Platform Engineering Associate</h3>
+          <p class="exam-meta hl">Vendor: Linux Foundation</p>
+          <p class="exam-desc hl">CNCF and Linux Foundation exam on platform engineering fundamentals. It covers internal developer platforms, continuous delivery, platform APIs and infrastructure provisioning, observability, security and conformance, and developer experience.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Platform Engineering</li><li>Kubernetes</li><li>Internal Developer Platforms</li><li>Continuous Delivery</li><li>Observability</li><li>Platform Security</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Build one self-service deployment path for developers and evaluate its experience as a product.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://www.instagram.com/prof.davidcooper/p/Dds2d0KCkEA/">View CNPA Resource</a>
+            <span class="res-url">https://www.instagram.com/prof.davidcooper/p/Dds2d0KCkEA/</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="GH-100" data-category="Software Development" data-vendor="GitHub">
+          <div class="card-head">
+            <span class="badge-code">GH-100</span>
+            <span class="badge-cat">Software Development</span>
+          </div>
+          <h3 class="exam-title hl">GitHub Foundations</h3>
+          <p class="exam-meta hl">Vendor: GitHub</p>
+          <p class="exam-desc hl">Entry exam covering Git and GitHub fundamentals: repositories, commits, branches, pull requests, collaborative workflows, GitHub Actions basics, and platform security features.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Git Basics</li><li>Branching and Merging</li><li>Pull Requests</li><li>GitHub Actions</li><li>Collaboration Features</li><li>Repository Security</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Run the full branch and pull request workflow every day for two weeks so the concepts become automatic.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://www.instagram.com/prof.davidcooper/p/Dds2n2aCgDp/">View GH-100 Resource</a>
+            <span class="res-url">https://www.instagram.com/prof.davidcooper/p/Dds2n2aCgDp/</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="SPLK-1003" data-category="Data and AI" data-vendor="Splunk">
+          <div class="card-head">
+            <span class="badge-code">SPLK-1003</span>
+            <span class="badge-cat">Data and AI</span>
+          </div>
+          <h3 class="exam-title hl">Splunk Core Certified Admin</h3>
+          <p class="exam-meta hl">Vendor: Splunk</p>
+          <p class="exam-desc hl">Administration exam for Splunk core components. It covers data ingestion, index-time and search-time behavior, configuration files and precedence, user roles and permissions, apps, and deployment management.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Data Ingestion</li><li>Indexing</li><li>Search Processing</li><li>Config File Precedence</li><li>User Roles</li><li>Deployment Server</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Drill the difference between index-time and search-time processing until you can explain both from memory.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://fanspo.com/nba/s/wizards/p/WxHpaO_xu5dPj-/no-1-updated-splk-1003-dumps-practice-test-2026">View SPLK-1003 Resource</a>
+            <span class="res-url">https://fanspo.com/nba/s/wizards/p/WxHpaO_xu5dPj-/no-1-updated-splk-1003-dumps-practice-test-2026</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="SC-300" data-category="Cybersecurity" data-vendor="Microsoft">
+          <div class="card-head">
+            <span class="badge-code">SC-300</span>
+            <span class="badge-cat">Cybersecurity</span>
+          </div>
+          <h3 class="exam-title hl">Microsoft Identity and Access Administrator</h3>
+          <p class="exam-meta hl">Vendor: Microsoft</p>
+          <p class="exam-desc hl">Exam covering identity design and operation in Microsoft Entra ID. Topics include authentication and access management, Conditional Access, identity governance, privileged access, and workload identities.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Microsoft Entra ID</li><li>Conditional Access</li><li>Identity Governance</li><li>Multifactor Authentication</li><li>Privileged Access</li><li>Workload Identities</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Draft Conditional Access policies for realistic risk cases and review the tradeoff each policy introduces.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://fanspo.com/nba/s/wizards/p/dzqsS-e-ORDyP4/no-1-updated-sc-300-dumps-practice-test-2026">View SC-300 Resource</a>
+            <span class="res-url">https://fanspo.com/nba/s/wizards/p/dzqsS-e-ORDyP4/no-1-updated-sc-300-dumps-practice-test-2026</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="D-AV-DY-23" data-category="Data Center and Storage" data-vendor="Dell Technologies">
+          <div class="card-head">
+            <span class="badge-code">D-AV-DY-23</span>
+            <span class="badge-cat">Data Center and Storage</span>
+          </div>
+          <h3 class="exam-title hl">Dell Avamar Deploy 2023</h3>
+          <p class="exam-meta hl">Vendor: Dell Technologies</p>
+          <p class="exam-desc hl">Deployment exam for Dell Avamar backup solutions. It covers Avamar concepts and architecture, installation and upgrades, the Avamar Data Store, daily administration, backup and restore operations, replication, and Cloud Tier.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Avamar Architecture</li><li>Installation and Upgrades</li><li>Backup and Restore</li><li>Replication</li><li>Cloud Tier</li><li>Data Domain Integration</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Rehearse install, backup, restore, and replication in order and list the daily maintenance tasks after each step.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://fanspo.com/nba/s/wizards/p/k-IUfVmTJupawc/no-1-updated-d-av-dy-23-dumps-practice-test-2026">View D-AV-DY-23 Resource</a>
+            <span class="res-url">https://fanspo.com/nba/s/wizards/p/k-IUfVmTJupawc/no-1-updated-d-av-dy-23-dumps-practice-test-2026</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="CCRA-L2" data-category="Finance and Insurance" data-vendor="AIWMI">
+          <div class="card-head">
+            <span class="badge-code">CCRA-L2</span>
+            <span class="badge-cat">Finance and Insurance</span>
+          </div>
+          <h3 class="exam-title hl">Certified Credit Research Analyst Level 2</h3>
+          <p class="exam-meta hl">Vendor: AIWMI</p>
+          <p class="exam-desc hl">Advanced credit analysis exam covering rating methodologies, debt instruments and guidelines, credit proposal and appraisal work, capital budgeting, structured finance products, and bond valuation measures.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Credit Ratings</li><li>Debt Instruments</li><li>Credit Appraisal</li><li>Structured Finance</li><li>Bond Valuation</li><li>Capital Budgeting</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Work credit appraisal cases and bond math until the calculations run smoothly without pauses.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://fanspo.com/nba/s/wizards/p/vqO6FuCbIhnSRC/no-1-updated-ccra-l2-dumps-practice-test-2026">View CCRA-L2 Resource</a>
+            <span class="res-url">https://fanspo.com/nba/s/wizards/p/vqO6FuCbIhnSRC/no-1-updated-ccra-l2-dumps-practice-test-2026</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="PGCES-02" data-category="Databases" data-vendor="PostgreSQL-CE">
+          <div class="card-head">
+            <span class="badge-code">PGCES-02</span>
+            <span class="badge-cat">Databases</span>
+          </div>
+          <h3 class="exam-title hl">PostgreSQL CE 8 Silver</h3>
+          <p class="exam-meta hl">Vendor: PostgreSQL-CE</p>
+          <p class="exam-desc hl">Entry-level PostgreSQL certification covering relational database fundamentals, SQL, server administration, backup and recovery, and everyday operational tasks on PostgreSQL systems.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>SQL</li><li>Database Design</li><li>Server Configuration</li><li>Backup and Recovery</li><li>Indexing</li><li>User Management</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Install PostgreSQL locally and rehearse backup, restore, and index tuning tasks by hand at least once.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://fanspo.com/nba/s/wizards/p/4FykfDeYQlGlil/no-1-updated-pgces-02-dumps-practice-test-2026">View PGCES-02 Resource</a>
+            <span class="res-url">https://fanspo.com/nba/s/wizards/p/4FykfDeYQlGlil/no-1-updated-pgces-02-dumps-practice-test-2026</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="1Z0-599" data-category="Databases" data-vendor="Oracle">
+          <div class="card-head">
+            <span class="badge-code">1Z0-599</span>
+            <span class="badge-cat">Databases</span>
+          </div>
+          <h3 class="exam-title hl">Oracle WebLogic Server 12c Essentials</h3>
+          <p class="exam-meta hl">Vendor: Oracle</p>
+          <p class="exam-desc hl">Essentials exam covering Oracle WebLogic Server 12c for enterprise Java applications: server architecture and domains, application deployment, clustering and high availability, JDBC and JMS configuration, and security.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>WebLogic Architecture</li><li>Domain Configuration</li><li>Application Deployment</li><li>Clustering</li><li>JDBC and JMS</li><li>Server Security</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Create a clustered domain and practice deploying, scaling, and undeploying an application across it.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://fanspo.com/nba/s/wizards/p/TKQTB9n0lbfBZk/no-1-updated-1z0-599-dumps-practice-test-2026">View 1Z0-599 Resource</a>
+            <span class="res-url">https://fanspo.com/nba/s/wizards/p/TKQTB9n0lbfBZk/no-1-updated-1z0-599-dumps-practice-test-2026</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="GED-Writing" data-category="Education and Academic" data-vendor="GED Testing Service">
+          <div class="card-head">
+            <span class="badge-code">GED-Writing</span>
+            <span class="badge-cat">Education and Academic</span>
+          </div>
+          <h3 class="exam-title hl">GED Reasoning Through Language Arts</h3>
+          <p class="exam-meta hl">Vendor: GED Testing Service</p>
+          <p class="exam-desc hl">Language arts assessment testing reading comprehension, argument and text analysis, grammar and usage, and extended writing skills at a high school equivalency level.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Reading Comprehension</li><li>Grammar and Usage</li><li>Essay Structure</li><li>Argument Analysis</li><li>Editing and Revision</li><li>Evidence Use</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Write one timed extended response each week and edit it the next day while your head is fresh.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://fanspo.com/nba/s/wizards/p/WYRK79D5vlK1wc/no-1-updated-ged-writing-dumps-practice-test-2026">View GED-Writing Resource</a>
+            <span class="res-url">https://fanspo.com/nba/s/wizards/p/WYRK79D5vlK1wc/no-1-updated-ged-writing-dumps-practice-test-2026</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="156-590" data-category="Cybersecurity" data-vendor="Check Point">
+          <div class="card-head">
+            <span class="badge-code">156-590</span>
+            <span class="badge-cat">Cybersecurity</span>
+          </div>
+          <h3 class="exam-title hl">Check Point Certified Threat Prevention Specialist</h3>
+          <p class="exam-meta hl">Vendor: Check Point</p>
+          <p class="exam-desc hl">Specialist exam covering Check Point threat prevention technologies: IPS, Anti-Virus, Anti-Bot, Threat Emulation, Threat Extraction, and ThreatCloud intelligence, plus policy tuning and exception handling.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>IPS</li><li>Threat Emulation</li><li>Anti-Bot and Anti-Virus</li><li>ThreatCloud</li><li>Threat Prevention Profiles</li><li>Exception Handling</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Enable each blade in a lab policy and practice tuning exceptions without weakening the protection behind them.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://fanspo.com/nba/s/wizards/p/uYsENX5kDDFfER/no-1-updated-156-590-dumps-practice-test-2026">View 156-590 Resource</a>
+            <span class="res-url">https://fanspo.com/nba/s/wizards/p/uYsENX5kDDFfER/no-1-updated-156-590-dumps-practice-test-2026</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="2V0-71.23" data-category="Cloud and Platform" data-vendor="VMware">
+          <div class="card-head">
+            <span class="badge-code">2V0-71.23</span>
+            <span class="badge-cat">Cloud and Platform</span>
+          </div>
+          <h3 class="exam-title hl">VMware Tanzu for Kubernetes Operations Professional</h3>
+          <p class="exam-meta hl">Vendor: VMware</p>
+          <p class="exam-desc hl">Professional exam covering Kubernetes operations with VMware Tanzu: cluster installation and lifecycle, container image management, application deployment and scaling, monitoring and troubleshooting, and access control.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Kubernetes Operations</li><li>Tanzu Cluster Lifecycle</li><li>Container Images</li><li>Scaling and Updates</li><li>Monitoring</li><li>Access Control</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Operate one cluster end to end: build an image, deploy it, scale it, monitor it, and rotate who can access it.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://fanspo.com/nba/s/wizards/p/6nfTe1Ov4f_KSL/no-1-updated-2v0-7123-dumps-practice-test-2026">View 2V0-71.23 Resource</a>
+            <span class="res-url">https://fanspo.com/nba/s/wizards/p/6nfTe1Ov4f_KSL/no-1-updated-2v0-7123-dumps-practice-test-2026</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="H35-920" data-category="Cloud and Platform" data-vendor="Huawei">
+          <div class="card-head">
+            <span class="badge-code">H35-920</span>
+            <span class="badge-cat">Cloud and Platform</span>
+          </div>
+          <h3 class="exam-title hl">Huawei HCIA-OWS Developer</h3>
+          <p class="exam-meta hl">Vendor: Huawei</p>
+          <p class="exam-desc hl">Associate developer exam for Huawei OWS, the ICT operations and maintenance cloud. It covers the microservice-based platform architecture, end-to-end monitoring, big data analysis integration, and developer extensibility.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>ICT Operations</li><li>Microservice Architecture</li><li>Network Monitoring</li><li>Data Analytics</li><li>DevOps Practice</li><li>Platform APIs</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Learn the OWS platform layers first, then practice the developer extension and monitoring workflows.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://forum.linsoul.com/d/7521-pass-h35-920-on-your-first-attempt-updated-2026-exam-dumps">View H35-920 Resource</a>
+            <span class="res-url">https://forum.linsoul.com/d/7521-pass-h35-920-on-your-first-attempt-updated-2026-exam-dumps</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="Professional-Data-Engineer" data-category="Data and AI" data-vendor="Google Cloud">
+          <div class="card-head">
+            <span class="badge-code">Professional-Data-Engineer</span>
+            <span class="badge-cat">Data and AI</span>
+          </div>
+          <h3 class="exam-title hl">Google Cloud Professional Data Engineer</h3>
+          <p class="exam-meta hl">Vendor: Google Cloud</p>
+          <p class="exam-desc hl">Professional exam on designing, building, and operating data systems on Google Cloud. It covers data pipelines, BigQuery, data modeling, machine learning workflows, reliability, and security of data platforms.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>BigQuery</li><li>Data Pipelines</li><li>Dataflow and Dataproc</li><li>Data Modeling</li><li>ML Workflows</li><li>Reliability and Security</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Design batch and streaming pipelines for the same dataset and compare their cost and reliability tradeoffs.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://forum.linsoul.com/d/7522-professional-data-engineer-practice-questions-2026-real-exam-style-prep">View Professional-Data-Engineer Resource</a>
+            <span class="res-url">https://forum.linsoul.com/d/7522-professional-data-engineer-practice-questions-2026-real-exam-style-prep</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="Managing-Cloud-Security" data-category="Cybersecurity" data-vendor="WGU">
+          <div class="card-head">
+            <span class="badge-code">Managing-Cloud-Security</span>
+            <span class="badge-cat">Cybersecurity</span>
+          </div>
+          <h3 class="exam-title hl">Managing Cloud Security</h3>
+          <p class="exam-meta hl">Vendor: WGU</p>
+          <p class="exam-desc hl">University-level exam covering the management of cloud security: governance and regulatory compliance, encryption, identity and access management, common cloud threats, and secure migration from legacy environments.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Cloud Security Governance</li><li>Encryption</li><li>Identity and Access</li><li>Regulatory Compliance</li><li>Threat Models</li><li>Secure Migration</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Write a one page security requirements brief for a fictional cloud migration, then check each control area against it.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://forum.linsoul.com/d/7523-verified-managing-cloud-security-exam-dumps-updated-for-2026-certification">View Managing-Cloud-Security Resource</a>
+            <span class="res-url">https://forum.linsoul.com/d/7523-verified-managing-cloud-security-exam-dumps-updated-for-2026-certification</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="ISO-IEC-LI" data-category="Governance and Risk" data-vendor="GAQM">
+          <div class="card-head">
+            <span class="badge-code">ISO-IEC-LI</span>
+            <span class="badge-cat">Governance and Risk</span>
+          </div>
+          <h3 class="exam-title hl">ISO/IEC 27002 Lead Implementer</h3>
+          <p class="exam-meta hl">Vendor: GAQM</p>
+          <p class="exam-desc hl">Lead implementer exam covering the design, rollout, and upkeep of an information security management system built on ISO/IEC 27002 controls: governance and risk, access control, operations, and incident management.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>ISMS Implementation</li><li>ISO 27002 Controls</li><li>Risk Treatment</li><li>Access Control</li><li>Incident Management</li><li>Corrective Actions</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Map each ISO 27002 control family to a concrete control example from work or published case studies.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://forum.linsoul.com/d/7524-iso-iec-li-exam-questions-trusted-2026-practice-material">View ISO-IEC-LI Resource</a>
+            <span class="res-url">https://forum.linsoul.com/d/7524-iso-iec-li-exam-questions-trusted-2026-practice-material</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="RCDDv14.1" data-category="Networking and Telecom" data-vendor="BICSI">
+          <div class="card-head">
+            <span class="badge-code">RCDDv14.1</span>
+            <span class="badge-cat">Networking and Telecom</span>
+          </div>
+          <h3 class="exam-title hl">Registered Communications Distribution Designer v14.1</h3>
+          <p class="exam-meta hl">Vendor: BICSI</p>
+          <p class="exam-desc hl">BICSI design credential covering structured cabling design: pathways and spaces, copper and fiber distribution systems, bonding and grounding, drawing and specification documents, and project administration.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Structured Cabling</li><li>Fiber Optic Systems</li><li>Pathways and Spaces</li><li>Bonding and Grounding</li><li>TIA Standards</li><li>Design Documents</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Draw cable pathways and equipment rooms to scale, then check each design choice against BICSI methods.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://forum.linsoul.com/d/7525-rcddv141-exam-dumps-real-questions-with-detailed-explanations">View RCDDv14.1 Resource</a>
+            <span class="res-url">https://forum.linsoul.com/d/7525-rcddv141-exam-dumps-real-questions-with-detailed-explanations</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="1Z0-184-25" data-category="Data and AI" data-vendor="Oracle">
+          <div class="card-head">
+            <span class="badge-code">1Z0-184-25</span>
+            <span class="badge-cat">Data and AI</span>
+          </div>
+          <h3 class="exam-title hl">Oracle Database AI Vector Search Professional</h3>
+          <p class="exam-meta hl">Vendor: Oracle</p>
+          <p class="exam-desc hl">Exam covering AI vector search in Oracle Database 23ai: the vector data type and distance metrics, HNSW and IVF indexes, exact and approximate similarity search, embeddings, and building retrieval augmented generation applications.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Vector Data Type</li><li>Similarity Search</li><li>HNSW and IVF Indexes</li><li>Vector Embeddings</li><li>RAG Applications</li><li>PL/SQL and Python</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Build one small RAG application with stored embeddings and compare exact against approximate search results.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://forum.linsoul.com/d/7526-oracle-1z0-184-25-certification-dumps-2026-complete-question-bank">View 1Z0-184-25 Resource</a>
+            <span class="res-url">https://forum.linsoul.com/d/7526-oracle-1z0-184-25-certification-dumps-2026-complete-question-bank</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="LLQP" data-category="Finance and Insurance" data-vendor="LLQP Program">
+          <div class="card-head">
+            <span class="badge-code">LLQP</span>
+            <span class="badge-cat">Finance and Insurance</span>
+          </div>
+          <h3 class="exam-title hl">Life License Qualification Program</h3>
+          <p class="exam-meta hl">Vendor: LLQP Program</p>
+          <p class="exam-desc hl">Canadian insurance licensing exam covering life insurance, accident and sickness insurance, segregated funds, and annuities, along with taxation basics, ethics, and suitability for client recommendations.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Life Insurance</li><li>Accident and Sickness</li><li>Segregated Funds</li><li>Annuities</li><li>Tax Fundamentals</li><li>Ethics and Suitability</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Build comparison tables for the product types and rehearse client recommendations out loud until they sound natural.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://forum.linsoul.com/d/7527-download-llqp-pdf-dumps-updated-2026-practice-questions">View LLQP Resource</a>
+            <span class="res-url">https://forum.linsoul.com/d/7527-download-llqp-pdf-dumps-updated-2026-practice-questions</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="NSE7_CDS_AR-7.6" data-category="Cybersecurity" data-vendor="Fortinet">
+          <div class="card-head">
+            <span class="badge-code">NSE7_CDS_AR-7.6</span>
+            <span class="badge-cat">Cybersecurity</span>
+          </div>
+          <h3 class="exam-title hl">Fortinet NSE 7 Public Cloud Security Architect</h3>
+          <p class="exam-meta hl">Vendor: Fortinet</p>
+          <p class="exam-desc hl">Architect exam covering Fortinet security in public clouds. It addresses deploying and operating FortiGate across AWS and Azure, automation with tools such as Terraform and CloudFormation, and troubleshooting cloud security issues.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Public Cloud Security</li><li>FortiGate Deployment</li><li>AWS and Azure</li><li>Terraform Automation</li><li>Security Fabric</li><li>Cloud Troubleshooting</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Deploy FortiGate in two cloud providers and repeat the same build, monitor, and fix sequence on both.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://forum.linsoul.com/d/7528-nse7-cds-ar-76-exam-dumps-accurate-practice-questions-study-guide">View NSE7_CDS_AR-7.6 Resource</a>
+            <span class="res-url">https://forum.linsoul.com/d/7528-nse7-cds-ar-76-exam-dumps-accurate-practice-questions-study-guide</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="PSE-PrismaCloud" data-category="Cybersecurity" data-vendor="Palo Alto Networks">
+          <div class="card-head">
+            <span class="badge-code">PSE-PrismaCloud</span>
+            <span class="badge-cat">Cybersecurity</span>
+          </div>
+          <h3 class="exam-title hl">Palo Alto Networks System Engineer Prisma Cloud</h3>
+          <p class="exam-meta hl">Vendor: Palo Alto Networks</p>
+          <p class="exam-desc hl">System engineer exam covering the Prisma Cloud platform: architecture and components, cloud posture management, workload protection, cloud identity security, microsegmentation, and Kubernetes and container security.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Cloud Posture Management</li><li>Workload Protection</li><li>Cloud Identity Security</li><li>Kubernetes Security</li><li>Microsegmentation</li><li>Compliance</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Walk a multi-cloud onboarding scenario and decide which Prisma Cloud module resolves each identified risk.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://forum.linsoul.com/d/7529-verified-2026-pse-prismacloud-exam-dumps-real-exam-questions">View PSE-PrismaCloud Resource</a>
+            <span class="res-url">https://forum.linsoul.com/d/7529-verified-2026-pse-prismacloud-exam-dumps-real-exam-questions</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="BIM_MGT_101" data-category="Design and Accessibility" data-vendor="Autodesk">
+          <div class="card-head">
+            <span class="badge-code">BIM_MGT_101</span>
+            <span class="badge-cat">Design and Accessibility</span>
+          </div>
+          <h3 class="exam-title hl">Autodesk Certified Professional in BIM Management for Building Design</h3>
+          <p class="exam-meta hl">Vendor: Autodesk</p>
+          <p class="exam-desc hl">Professional exam covering BIM management for building design: collaboration processes across multidisciplinary teams, corporate standards and documentation, project needs assessment, and model data management.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>BIM Workflows</li><li>Team Collaboration</li><li>Project Standards</li><li>Data Management</li><li>Needs Assessment</li><li>Coordination</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Review each topic as a management responsibility rather than a software click-path.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://selene427.tawk.help/article/bim_mgt_101-dumps-focus-on-exam-practice">View BIM_MGT_101 Resource</a>
+            <span class="res-url">https://selene427.tawk.help/article/bim_mgt_101-dumps-focus-on-exam-practice</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="AND-801" data-category="Software Development" data-vendor="Android ATC">
+          <div class="card-head">
+            <span class="badge-code">AND-801</span>
+            <span class="badge-cat">Software Development</span>
+          </div>
+          <h3 class="exam-title hl">Android Application Development v8</h3>
+          <p class="exam-meta hl">Vendor: Android ATC</p>
+          <p class="exam-desc hl">Developer exam covering Android application development with Java and the Android SDK: application structure and life cycle, activities and intents, layouts and UI building, data storage, debugging, and optimization.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Android SDK</li><li>Java for Android</li><li>Activities and Intents</li><li>Layouts and UI</li><li>Data Storage</li><li>Debugging</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Build and debug two complete small apps so life cycle and storage questions feel familiar.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://selene427.tawk.help/article/android-and-801-dumps-master-your-exam-preparation">View AND-801 Resource</a>
+            <span class="res-url">https://selene427.tawk.help/article/android-and-801-dumps-master-your-exam-preparation</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="500-470" data-category="Networking and Telecom" data-vendor="Cisco">
+          <div class="card-head">
+            <span class="badge-code">500-470</span>
+            <span class="badge-cat">Networking and Telecom</span>
+          </div>
+          <h3 class="exam-title hl">Cisco Enterprise Networks SDA, SDWAN and ISE for System Engineers</h3>
+          <p class="exam-meta hl">Vendor: Cisco</p>
+          <p class="exam-desc hl">System engineer exam covering the Cisco enterprise networking portfolio: SD-Access, SD-WAN, and ISE design positioning, segmentation and policy, and how the three fit together in customer environments.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>SD-Access</li><li>SD-WAN</li><li>Cisco ISE</li><li>Design Positioning</li><li>Segmentation</li><li>Network Assurance</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Explain SDA, SD-WAN, and ISE as one architecture in a fifteen minute whiteboard session.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://selene427.tawk.help/article/cisco-500-470-dumps-build-confidence-for-your-exam">View 500-470 Resource</a>
+            <span class="res-url">https://selene427.tawk.help/article/cisco-500-470-dumps-build-confidence-for-your-exam</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="CCP" data-category="Business and Management" data-vendor="AACE International">
+          <div class="card-head">
+            <span class="badge-code">CCP</span>
+            <span class="badge-cat">Business and Management</span>
+          </div>
+          <h3 class="exam-title hl">Certified Cost Professional</h3>
+          <p class="exam-meta hl">Vendor: AACE International</p>
+          <p class="exam-desc hl">Cost engineering credential built on AACE total cost management. It covers cost estimating, planning and scheduling, cost control and earned value, project management, and decision support across the capital asset life cycle.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Cost Estimating</li><li>Planning and Scheduling</li><li>Cost Control</li><li>Earned Value</li><li>Total Cost Management</li><li>Project Economics</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Complete one estimating case and one cost control case each study week and keep your workings neat.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://selene427.tawk.help/article/cisco-500-470-dumps-build-confidence-for-your-exam">View CCP Resource</a>
+            <span class="res-url">https://selene427.tawk.help/article/cisco-500-470-dumps-build-confidence-for-your-exam</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="AIF" data-category="Data and AI" data-vendor="AIF">
+          <div class="card-head">
+            <span class="badge-code">AIF</span>
+            <span class="badge-cat">Data and AI</span>
+          </div>
+          <h3 class="exam-title hl">Artificial Intelligence Fundamentals</h3>
+          <p class="exam-meta hl">Vendor: AIF</p>
+          <p class="exam-desc hl">Fundamentals exam covering core artificial intelligence concepts: how machine learning differs from traditional programming, common model types, neural network basics, data quality, AI ethics, and typical business use cases.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>AI Concepts</li><li>Machine Learning Types</li><li>Neural Networks</li><li>Data Quality</li><li>AI Ethics</li><li>Business Use Cases</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Explain every AI concept in plain language and pair it with one real product example.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://bestdori.com/community/posts/254491/selene427-Verified-AIF-Exam-Dumps-Updated-for-2026-Certification">View AIF Resource</a>
+            <span class="res-url">https://bestdori.com/community/posts/254491/selene427-Verified-AIF-Exam-Dumps-Updated-for-2026-Certification</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="CRT-250" data-category="ERP and Business Applications" data-vendor="Salesforce">
+          <div class="card-head">
+            <span class="badge-code">CRT-250</span>
+            <span class="badge-cat">ERP and Business Applications</span>
+          </div>
+          <h3 class="exam-title hl">Salesforce Marketing Cloud Administrator</h3>
+          <p class="exam-meta hl">Vendor: Salesforce</p>
+          <p class="exam-desc hl">Administrator exam covering Salesforce Marketing Cloud configuration and operation: account setup and security, data model and data extensions, user management, automation, and deliverability configuration.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Marketing Cloud Setup</li><li>Data Extensions</li><li>User Management</li><li>Automation Studio</li><li>Deliverability</li><li>Security Configuration</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Configure a small journey with its data model in a sandbox and note every admin setting it touches.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://bestdori.com/community/posts/254492/selene427-Verified-Salesforce-CRT-25-Exam-Dumps-2026">View CRT-250 Resource</a>
+            <span class="res-url">https://bestdori.com/community/posts/254492/selene427-Verified-Salesforce-CRT-25-Exam-Dumps-2026</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="4A0-115" data-category="Networking and Telecom" data-vendor="Nokia">
+          <div class="card-head">
+            <span class="badge-code">4A0-115</span>
+            <span class="badge-cat">Networking and Telecom</span>
+          </div>
+          <h3 class="exam-title hl">Nokia Ethernet Virtual Private Network Services</h3>
+          <p class="exam-meta hl">Vendor: Nokia</p>
+          <p class="exam-desc hl">Nokia service routing exam covering EVPN services: route types and control plane behavior, multihoming, VXLAN data plane encapsulation, and provisioning EVPN services on Nokia service routing platforms.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>EVPN Routes</li><li>BGP Signaling</li><li>VXLAN Encapsulation</li><li>Multihoming</li><li>Service Provisioning</li><li>MPLS Integration</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Lab the common EVPN route exchanges and get comfortable reading the control plane output cold.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://bestdori.com/community/posts/254493/selene427-Verified-Nokia-4A0-115-Exam-Dumps-2026">View 4A0-115 Resource</a>
+            <span class="res-url">https://bestdori.com/community/posts/254493/selene427-Verified-Nokia-4A0-115-Exam-Dumps-2026</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="MBLEx" data-category="Health and Wellness" data-vendor="FSMTB">
+          <div class="card-head">
+            <span class="badge-code">MBLEx</span>
+            <span class="badge-cat">Health and Wellness</span>
+          </div>
+          <h3 class="exam-title hl">Massage and Bodywork Licensing Examination</h3>
+          <p class="exam-meta hl">Vendor: FSMTB</p>
+          <p class="exam-desc hl">Entry licensing examination for massage therapists. It covers anatomy and physiology, kinesiology, pathology, benefits and effects of massage, client assessment, ethics, and professional practice standards.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Anatomy and Physiology</li><li>Kinesiology</li><li>Pathology</li><li>Assessment Basics</li><li>Ethics</li><li>Professional Practice</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Study in body-system blocks and finish each block with a short practice quiz before moving on.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://bestdori.com/community/posts/254494/selene427-Verified-MBLEx-Exam-Dumps-2026">View MBLEx Resource</a>
+            <span class="res-url">https://bestdori.com/community/posts/254494/selene427-Verified-MBLEx-Exam-Dumps-2026</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="QSDA2024" data-category="Data and AI" data-vendor="Qlik">
+          <div class="card-head">
+            <span class="badge-code">QSDA2024</span>
+            <span class="badge-cat">Data and AI</span>
+          </div>
+          <h3 class="exam-title hl">Qlik Sense Data Architect Certification Exam 2024</h3>
+          <p class="exam-meta hl">Vendor: Qlik</p>
+          <p class="exam-desc hl">Associate exam covering Qlik Sense data architecture: data modeling and schema design, load script development, data sources and connections, transformation during load, and performance optimization.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Data Modeling</li><li>Load Scripts</li><li>Data Transformation</li><li>Data Connections</li><li>Synthetic Keys</li><li>Performance Tuning</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Rebuild one star schema load script and tune its load order and synthetic keys by hand.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://bestdori.com/community/posts/254495/selene427-Verified-QSDA2024-Exam-Dumps-2026">View QSDA2024 Resource</a>
+            <span class="res-url">https://bestdori.com/community/posts/254495/selene427-Verified-QSDA2024-Exam-Dumps-2026</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="H13-527" data-category="Cloud and Platform" data-vendor="Huawei">
+          <div class="card-head">
+            <span class="badge-code">H13-527</span>
+            <span class="badge-cat">Cloud and Platform</span>
+          </div>
+          <h3 class="exam-title hl">Huawei HCIP-Cloud Computing</h3>
+          <p class="exam-meta hl">Vendor: Huawei</p>
+          <p class="exam-desc hl">Professional exam covering private cloud and HUAWEI CLOUD Stack: cloud architecture and deployment, OpenStack service roles, compute and storage administration, networking, and operations and maintenance.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Cloud Stack Architecture</li><li>OpenStack Services</li><li>Cloud Deployment</li><li>Compute and Storage</li><li>Cloud Networking</li><li>Operations</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Compare OpenStack service roles side by side and rehearse the deployment and maintenance sequences in order.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://bestdori.com/community/posts/254496/selene427-Verified-CPP-Remote-Exam-Dumps-2026">View H13-527 Resource</a>
+            <span class="res-url">https://bestdori.com/community/posts/254496/selene427-Verified-CPP-Remote-Exam-Dumps-2026</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="CPP-Remote" data-category="Finance and Insurance" data-vendor="American Payroll Association">
+          <div class="card-head">
+            <span class="badge-code">CPP-Remote</span>
+            <span class="badge-cat">Finance and Insurance</span>
+          </div>
+          <h3 class="exam-title hl">Certified Payroll Professional</h3>
+          <p class="exam-meta hl">Vendor: American Payroll Association</p>
+          <p class="exam-desc hl">Advanced payroll credential covering core payroll concepts, paycheck calculation, employer taxes and contributions, voluntary and involuntary deductions, multi-state taxation, reporting, and compliance obligations.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Paycheck Calculation</li><li>FLSA and Hours Worked</li><li>Employment Taxes</li><li>Multi-State Taxation</li><li>Reporting Requirements</li><li>Payroll Compliance</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Calculate complete paychecks under different deduction and state tax scenarios until the math is automatic.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://bestdori.com/community/posts/254497/selene427-Verified-EXIN-CDFOM-Exam-Dumps-2026">View CPP-Remote Resource</a>
+            <span class="res-url">https://bestdori.com/community/posts/254497/selene427-Verified-EXIN-CDFOM-Exam-Dumps-2026</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="CDFOM" data-category="Data Center and Storage" data-vendor="EXIN">
+          <div class="card-head">
+            <span class="badge-code">CDFOM</span>
+            <span class="badge-cat">Data Center and Storage</span>
+          </div>
+          <h3 class="exam-title hl">EXIN Certified Data Centre Facilities Operations Manager</h3>
+          <p class="exam-meta hl">Vendor: EXIN</p>
+          <p class="exam-desc hl">Data center management exam covering facilities operations: power and cooling systems, safety and compliance, capacity and maintenance planning, service delivery, and data center infrastructure management practice.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Power and Cooling</li><li>Capacity Planning</li><li>Safety and Compliance</li><li>Maintenance Programs</li><li>Service Delivery</li><li>DCIM Practice</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Study each facility system as operations procedures with its risks, daily checks, and escalation path.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://bestdori.com/community/posts/254498/selene427-Verified-Microsoft-MS-700-Exam-Dumps-2026">View CDFOM Resource</a>
+            <span class="res-url">https://bestdori.com/community/posts/254498/selene427-Verified-Microsoft-MS-700-Exam-Dumps-2026</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="MS-700" data-category="IT Service Management" data-vendor="Microsoft">
+          <div class="card-head">
+            <span class="badge-code">MS-700</span>
+            <span class="badge-cat">IT Service Management</span>
+          </div>
+          <h3 class="exam-title hl">Managing Microsoft Teams</h3>
+          <p class="exam-meta hl">Vendor: Microsoft</p>
+          <p class="exam-desc hl">Administrator exam covering Microsoft Teams: chat and channel configuration, meetings and phone policies, app management, security and compliance controls, and tenant-wide governance settings.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Teams Configuration</li><li>Meetings and Phone</li><li>Messaging Policies</li><li>App Policies</li><li>Security and Compliance</li><li>Governance</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Plan and configure a full Teams rollout in a test tenant covering messaging, meeting, and app policies.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://profit.ly/user/kurrkupps/blog/microsoft-ms-700-exam-dumps--accurate-practice-questions--study-guide">View MS-700 Resource</a>
+            <span class="res-url">https://profit.ly/user/kurrkupps/blog/microsoft-ms-700-exam-dumps--accurate-practice-questions--study-guide</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="ASDEV01" data-category="Software Development" data-vendor="Blue Prism">
+          <div class="card-head">
+            <span class="badge-code">ASDEV01</span>
+            <span class="badge-cat">Software Development</span>
+          </div>
+          <h3 class="exam-title hl">Blue Prism Certified Associate Developer</h3>
+          <p class="exam-meta hl">Vendor: Blue Prism</p>
+          <p class="exam-desc hl">Associate developer exam covering robotic process automation with Blue Prism: process and object studios, stages and logic, exception handling, work queues, environment setup, and release management.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Process Studio</li><li>Object Studio</li><li>Exception Handling</li><li>Work Queues</li><li>Application Modeling</li><li>Release Management</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Build one process and one business object with real exception handling before you sit the exam.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://profit.ly/user/kurrkupps/blog/verified-2026-asdev01-exam-dumps--real-exam-questions">View ASDEV01 Resource</a>
+            <span class="res-url">https://profit.ly/user/kurrkupps/blog/verified-2026-asdev01-exam-dumps--real-exam-questions</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="NSE5_FSW_AD-7.6" data-category="Networking and Telecom" data-vendor="Fortinet">
+          <div class="card-head">
+            <span class="badge-code">NSE5_FSW_AD-7.6</span>
+            <span class="badge-cat">Networking and Telecom</span>
+          </div>
+          <h3 class="exam-title hl">Fortinet NSE 5 FortiSwitch and FortiAP Administrator</h3>
+          <p class="exam-meta hl">Vendor: Fortinet</p>
+          <p class="exam-desc hl">Administration exam covering FortiSwitch and FortiAP deployment and management through FortiGate and the Security Fabric: FortiLink setup, VLAN segmentation, wireless configuration, and access layer troubleshooting.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>FortiSwitch</li><li>FortiAP Wireless</li><li>FortiLink</li><li>VLANs</li><li>Security Fabric</li><li>Access Troubleshooting</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Practice FortiLink setup, VLAN segmentation, and wireless troubleshooting together in one small lab.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://profit.ly/user/kurrkupps/blog/fortinet-nse5_fsw_ad-76-exam-2026--updated-dumps--practice-questions">View NSE5_FSW_AD-7.6 Resource</a>
+            <span class="res-url">https://profit.ly/user/kurrkupps/blog/fortinet-nse5_fsw_ad-76-exam-2026--updated-dumps--practice-questions</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="302" data-category="Cybersecurity" data-vendor="F5">
+          <div class="card-head">
+            <span class="badge-code">302</span>
+            <span class="badge-cat">Cybersecurity</span>
+          </div>
+          <h3 class="exam-title hl">F5 BIG-IP ASM Specialist</h3>
+          <p class="exam-meta hl">Vendor: F5</p>
+          <p class="exam-desc hl">Specialist exam covering the F5 BIG-IP Application Security Manager: web application firewall policy building and learning mode, OWASP attack classes, traffic inspection, exception handling, and security reporting.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Web Application Firewall</li><li>OWASP Top 10</li><li>Policy Building</li><li>Learning Mode</li><li>Traffic Inspection</li><li>Security Reporting</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Build an ASM policy against a deliberately vulnerable web app and tune it attack class by attack class.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://profit.ly/user/kurrkupps/blog/f5-networks-302-dumps-2026--verified-exam-questions--answers">View 302 Resource</a>
+            <span class="res-url">https://profit.ly/user/kurrkupps/blog/f5-networks-302-dumps-2026--verified-exam-questions--answers</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="QV12BA" data-category="Data and AI" data-vendor="Qlik">
+          <div class="card-head">
+            <span class="badge-code">QV12BA</span>
+            <span class="badge-cat">Data and AI</span>
+          </div>
+          <h3 class="exam-title hl">QlikView 12 Business Analyst</h3>
+          <p class="exam-meta hl">Vendor: Qlik</p>
+          <p class="exam-desc hl">Business analyst exam covering QlikView 12 application design: sheet objects and layout, dimensions and expressions, set analysis for business questions, and interactive data discovery for end users.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Sheet Objects</li><li>Dimensions and Expressions</li><li>Set Analysis</li><li>Dashboard Design</li><li>Data Discovery</li><li>Chart Design</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Recreate three business charts and write their set analysis expressions from scratch.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://profit.ly/user/kurrkupps/blog/qv12ba-exam-dumps--built-around-the-latest-2026-objectives">View QV12BA Resource</a>
+            <span class="res-url">https://profit.ly/user/kurrkupps/blog/qv12ba-exam-dumps--built-around-the-latest-2026-objectives</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="1Z0-809" data-category="Software Development" data-vendor="Oracle">
+          <div class="card-head">
+            <span class="badge-code">1Z0-809</span>
+            <span class="badge-cat">Software Development</span>
+          </div>
+          <h3 class="exam-title hl">Oracle Certified Professional Java SE 8 Programmer II</h3>
+          <p class="exam-meta hl">Vendor: Oracle</p>
+          <p class="exam-desc hl">Professional Java exam covering advanced Java SE 8 topics: lambdas and streams, concurrency and parallelism, NIO.2 file APIs, JDBC, annotations, generics, and object-oriented design principles.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Lambdas and Streams</li><li>Concurrency</li><li>NIO.2</li><li>JDBC</li><li>Generics</li><li>Design Principles</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Code every stream and concurrency example yourself; reading alone will not build the recall you need.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://profit.ly/user/kurrkupps/blog/real-oracle-1z0-809-exam-questions--trusted-2026-prep-resource">View 1Z0-809 Resource</a>
+            <span class="res-url">https://profit.ly/user/kurrkupps/blog/real-oracle-1z0-809-exam-questions--trusted-2026-prep-resource</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="ARC-801" data-category="Software Development" data-vendor="Salesforce">
+          <div class="card-head">
+            <span class="badge-code">ARC-801</span>
+            <span class="badge-cat">Software Development</span>
+          </div>
+          <h3 class="exam-title hl">Salesforce Certified Integration Architect</h3>
+          <p class="exam-meta hl">Vendor: Salesforce</p>
+          <p class="exam-desc hl">Architect exam covering integration design on the Salesforce platform: canonical integration patterns, API selection, security and identity, error handling and resilience, event-driven designs, and integration monitoring.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Integration Patterns</li><li>Salesforce APIs</li><li>Single Sign-On</li><li>Error Handling</li><li>Eventing</li><li>Integration Monitoring</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Map every business integration need to one canonical pattern and write down why you chose it.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://profit.ly/user/kurrkupps/blog/salesforce-arc-801-exam-dumps--reliable-prep-material-for-2026">View ARC-801 Resource</a>
+            <span class="res-url">https://profit.ly/user/kurrkupps/blog/salesforce-arc-801-exam-dumps--reliable-prep-material-for-2026</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="CFE-Law" data-category="Governance and Risk" data-vendor="ACFE">
+          <div class="card-head">
+            <span class="badge-code">CFE-Law</span>
+            <span class="badge-cat">Governance and Risk</span>
+          </div>
+          <h3 class="exam-title hl">Certified Fraud Examiner Law Section</h3>
+          <p class="exam-meta hl">Vendor: ACFE</p>
+          <p class="exam-desc hl">Law section of the CFE exam covering legal elements of fraud, criminal and civil proceedings, evidence rules and rights of the accused, and the anti-fraud legislation that shapes investigations and prosecutions.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Legal Elements of Fraud</li><li>Criminal and Civil Law</li><li>Evidence Rules</li><li>Rights of the Accused</li><li>Anti-Fraud Legislation</li><li>Expert Testimony</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Build a comparison sheet of civil and criminal fraud proceedings from filing through outcome.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://profit.ly/user/kurrkupps/blog/cfe-law-practice-test-2026--exam-style-questions--answers">View CFE-Law Resource</a>
+            <span class="res-url">https://profit.ly/user/kurrkupps/blog/cfe-law-practice-test-2026--exam-style-questions--answers</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="700-805" data-category="Business and Management" data-vendor="Cisco">
+          <div class="card-head">
+            <span class="badge-code">700-805</span>
+            <span class="badge-cat">Business and Management</span>
+          </div>
+          <h3 class="exam-title hl">Cisco Renewals Manager</h3>
+          <p class="exam-meta hl">Vendor: Cisco</p>
+          <p class="exam-desc hl">Partner exam covering customer experience and renewals practice: customer success concepts, renewal process steps, Cisco customer management tools, and demonstrating ongoing value to customer accounts.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Customer Success Concepts</li><li>Renewal Process</li><li>CX Tools</li><li>Value Realization</li><li>Account Planning</li><li>Health Signals</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Practice a renewal conversation scenario and list the customer health signals you would track between renewals.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://profit.ly/user/kurrkupps/blog/cisco-700-805-exam-dumps--expert-verified-questions-for-2026">View 700-805 Resource</a>
+            <span class="res-url">https://profit.ly/user/kurrkupps/blog/cisco-700-805-exam-dumps--expert-verified-questions-for-2026</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="DP-800" data-category="Data and AI" data-vendor="Microsoft">
+          <div class="card-head">
+            <span class="badge-code">DP-800</span>
+            <span class="badge-cat">Data and AI</span>
+          </div>
+          <h3 class="exam-title hl">Microsoft Fabric Analytics Engineer Associate</h3>
+          <p class="exam-meta hl">Vendor: Microsoft</p>
+          <p class="exam-desc hl">Analytics engineering exam on Microsoft Fabric: lakehouse and warehouse implementation, data ingestion and transformation pipelines, semantic model design for Power BI, and monitoring and performance of analytics solutions.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Microsoft Fabric</li><li>Lakehouse Design</li><li>Warehouse Modeling</li><li>Data Pipelines</li><li>Semantic Models</li><li>Performance Monitoring</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Build one Fabric solution from raw ingestion to semantic model and review how you would monitor it in production.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://app.talkshoe.com/show/fresh-2026-microsoft-dp-800-practice-questions-with-confirmed-solutions">View DP-800 Resource</a>
+            <span class="res-url">https://app.talkshoe.com/show/fresh-2026-microsoft-dp-800-practice-questions-with-confirmed-solutions</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="DEVOPSF" data-category="IT Service Management" data-vendor="PeopleCert">
+          <div class="card-head">
+            <span class="badge-code">DEVOPSF</span>
+            <span class="badge-cat">IT Service Management</span>
+          </div>
+          <h3 class="exam-title hl">DevOps Fundamentals</h3>
+          <p class="exam-meta hl">Vendor: PeopleCert</p>
+          <p class="exam-desc hl">Fundamentals exam covering DevOps culture and practice: the CALMS model, continuous integration and delivery, automation of build and release, measurement of flow, and selecting a DevOps toolchain.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>CALMS Model</li><li>Continuous Integration</li><li>Continuous Delivery</li><li>Automation</li><li>Measurement</li><li>Toolchain Design</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Map each DevOps concept to a practice your team could adopt next quarter and note how you would measure it.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://app.talkshoe.com/show/devopsf-exam-questions-with-realistic-practice-sets-2026">View DEVOPSF Resource</a>
+            <span class="res-url">https://app.talkshoe.com/show/devopsf-exam-questions-with-realistic-practice-sets-2026</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="L6M10" data-category="Procurement and Supply Chain" data-vendor="CIPS">
+          <div class="card-head">
+            <span class="badge-code">L6M10</span>
+            <span class="badge-cat">Procurement and Supply Chain</span>
+          </div>
+          <h3 class="exam-title hl">CIPS Global Logistics Strategy</h3>
+          <p class="exam-meta hl">Vendor: CIPS</p>
+          <p class="exam-desc hl">Level 6 elective on logistics strategy in global supply chains: network design, international trade flows and terms, inventory strategy across borders, and evaluating logistics performance worldwide.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Logistics Network Design</li><li>Trade Flows</li><li>Inventory Strategy</li><li>Incoterms</li><li>Performance Metrics</li><li>Risk in Global Logistics</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Write essay-style answers with clear structure and short examples from real international trade routes.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://app.talkshoe.com/show/top-rated-2026-cips-l6m10-exam-dumps-with-verified-questions-answers">View L6M10 Resource</a>
+            <span class="res-url">https://app.talkshoe.com/show/top-rated-2026-cips-l6m10-exam-dumps-with-verified-questions-answers</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="JN0-664" data-category="Networking and Telecom" data-vendor="Juniper Networks">
+          <div class="card-head">
+            <span class="badge-code">JN0-664</span>
+            <span class="badge-cat">Networking and Telecom</span>
+          </div>
+          <h3 class="exam-title hl">Juniper Service Provider Routing and Switching Professional</h3>
+          <p class="exam-meta hl">Vendor: Juniper Networks</p>
+          <p class="exam-desc hl">JNCIP-SP exam covering service provider routing on Junos: interior gateway protocols, BGP, MPLS and L3VPNs, multicast, class of service, and troubleshooting provider edge behavior.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>BGP</li><li>MPLS and L3VPN</li><li>IS-IS and OSPF</li><li>Multicast</li><li>Class of Service</li><li>Junos Troubleshooting</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Lab every protocol on Junos and practice reading the routing and signaling output without assistance.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://app.talkshoe.com/show/juniper-jn0-664-authentic-exam-questions-2026-with-confirmed-answers">View JN0-664 Resource</a>
+            <span class="res-url">https://app.talkshoe.com/show/juniper-jn0-664-authentic-exam-questions-2026-with-confirmed-answers</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="500-210" data-category="Networking and Telecom" data-vendor="Cisco">
+          <div class="card-head">
+            <span class="badge-code">500-210</span>
+            <span class="badge-cat">Networking and Telecom</span>
+          </div>
+          <h3 class="exam-title hl">Cisco SP Optical Technology Field Engineer Representative</h3>
+          <p class="exam-meta hl">Vendor: Cisco</p>
+          <p class="exam-desc hl">Field engineer exam covering Cisco NCS 2000 optical systems: DWDM fundamentals and fiber safety, hardware and shelf layout, nLight ROADM configuration, transponder and muxponder provisioning, and basic troubleshooting.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>DWDM Fundamentals</li><li>ROADM Configuration</li><li>NCS 2000 Hardware</li><li>Transponders</li><li>Optical Safety</li><li>Provisioning</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Learn the DWDM signal path first; hardware details are far easier once the light path makes sense.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://app.talkshoe.com/show/no-1-up-to-date-cisco-500-210-practice-questions-2026">View 500-210 Resource</a>
+            <span class="res-url">https://app.talkshoe.com/show/no-1-up-to-date-cisco-500-210-practice-questions-2026</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="PCAP-31-03" data-category="Software Development" data-vendor="Python Institute">
+          <div class="card-head">
+            <span class="badge-code">PCAP-31-03</span>
+            <span class="badge-cat">Software Development</span>
+          </div>
+          <h3 class="exam-title hl">Certified Associate in Python Programming</h3>
+          <p class="exam-meta hl">Vendor: Python Institute</p>
+          <p class="exam-desc hl">Associate exam covering intermediate Python programming: control flow, data structures, object-oriented programming, exceptions, modules and packages, and standard library essentials.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Control Flow</li><li>Data Structures</li><li>Object-Oriented Python</li><li>Exceptions</li><li>Modules</li><li>File Handling</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Solve a small coding drill every day and review each solution for a simpler Pythonic form.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://app.talkshoe.com/show/updated-2026-pcap-31-03-exam-dumps-with-real-exam-style-questions">View PCAP-31-03 Resource</a>
+            <span class="res-url">https://app.talkshoe.com/show/updated-2026-pcap-31-03-exam-dumps-with-real-exam-style-questions</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="OGEA-102" data-category="Business and Management" data-vendor="The Open Group">
+          <div class="card-head">
+            <span class="badge-code">OGEA-102</span>
+            <span class="badge-cat">Business and Management</span>
+          </div>
+          <h3 class="exam-title hl">TOGAF Enterprise Architecture Part 2</h3>
+          <p class="exam-meta hl">Vendor: The Open Group</p>
+          <p class="exam-desc hl">Scenario-based TOGAF exam on applying the framework in practice: ADM phase decisions, architecture governance, stakeholder management, content framework use, and planning enterprise transformation.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>TOGAF ADM Application</li><li>Architecture Governance</li><li>Content Framework</li><li>Stakeholder Management</li><li>Migration Planning</li><li>Capability Framework</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Answer classic scenario questions and justify every choice with clear ADM phase language.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://app.talkshoe.com/show/ogea-102-dumps-2026-with-verified-questions-expert-reviewed-answers">View OGEA-102 Resource</a>
+            <span class="res-url">https://app.talkshoe.com/show/ogea-102-dumps-2026-with-verified-questions-expert-reviewed-answers</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="CFE-Fraud-Investigations-and-Legal-Issues" data-category="Governance and Risk" data-vendor="ACFE">
+          <div class="card-head">
+            <span class="badge-code">CFE-Fraud-Investigations-and-Legal-Issues</span>
+            <span class="badge-cat">Governance and Risk</span>
+          </div>
+          <h3 class="exam-title hl">CFE Fraud Investigations and Legal Issues</h3>
+          <p class="exam-meta hl">Vendor: ACFE</p>
+          <p class="exam-desc hl">Fraud examination exam covering investigation planning, interview techniques, evidence collection and handling, report writing, and the legal issues that constrain and shape fraud investigations.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Investigation Planning</li><li>Interview Techniques</li><li>Evidence Handling</li><li>Legal Issues</li><li>Report Writing</li><li>Case Documentation</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Draft one sample investigation report and review it for evidence quality and a neutral tone.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://app.talkshoe.com/show/authentic-cfe-fraud-investigations-and-legal-issues-practice-set-2026-with-verified-questions-soluti">View CFE-Fraud-Investigations-and-Legal-Issues Resource</a>
+            <span class="res-url">https://app.talkshoe.com/show/authentic-cfe-fraud-investigations-and-legal-issues-practice-set-2026-with-verified-questions-soluti</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="BL0-220" data-category="Networking and Telecom" data-vendor="Nokia">
+          <div class="card-head">
+            <span class="badge-code">BL0-220</span>
+            <span class="badge-cat">Networking and Telecom</span>
+          </div>
+          <h3 class="exam-title hl">Nokia Bell Labs Distributed Cloud Networks</h3>
+          <p class="exam-meta hl">Vendor: Nokia</p>
+          <p class="exam-desc hl">Bell Labs exam covering distributed cloud networking for telecom: cloud service layering and microservices, the CloudBand platform, virtual network function life cycles, orchestration, and cloud-native onboarding.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Distributed Cloud Principles</li><li>VNF Life Cycle</li><li>Orchestration</li><li>Cloud-Native Architecture</li><li>Telco Cloud Design</li><li>Service Monitoring</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Learn the service life cycle stages and describe one VNF onboarding flow end to end in your own words.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://app.talkshoe.com/show/nokia-bl0-220-latest-questions-pdf-with-answers-2026">View BL0-220 Resource</a>
+            <span class="res-url">https://app.talkshoe.com/show/nokia-bl0-220-latest-questions-pdf-with-answers-2026</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="OG0-093" data-category="Business and Management" data-vendor="The Open Group">
+          <div class="card-head">
+            <span class="badge-code">OG0-093</span>
+            <span class="badge-cat">Business and Management</span>
+          </div>
+          <h3 class="exam-title hl">TOGAF 9 Combined Part 1 and Part 2</h3>
+          <p class="exam-meta hl">Vendor: The Open Group</p>
+          <p class="exam-desc hl">Combined TOGAF 9 exam testing both framework knowledge and its application: ADM phases, content metamodel, governance and compliance, reference models, and applying the framework to realistic cases.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>TOGAF 9 Framework</li><li>ADM Phases</li><li>Content Metamodel</li><li>Governance</li><li>Reference Models</li><li>Scenario Application</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Secure the definition questions for Part 1 first, then switch to timed scenario practice for Part 2.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://xfdev.yesterdaystractors.com/index.php?threads/1879360/">View OG0-093 Resource</a>
+            <span class="res-url">https://xfdev.yesterdaystractors.com/index.php?threads/1879360/</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="ICYB" data-category="Business and Management" data-vendor="IASSC">
+          <div class="card-head">
+            <span class="badge-code">ICYB</span>
+            <span class="badge-cat">Business and Management</span>
+          </div>
+          <h3 class="exam-title hl">IASSC Certified Yellow Belt</h3>
+          <p class="exam-meta hl">Vendor: IASSC</p>
+          <p class="exam-desc hl">Lean Six Sigma foundation exam covering the DMAIC roadmap, basic quality tools, process mapping, voice of the customer, root cause analysis, and the Yellow Belt role inside improvement projects.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>DMAIC Roadmap</li><li>Process Mapping</li><li>Quality Tools</li><li>Voice of the Customer</li><li>Root Cause Analysis</li><li>Lean Basics</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Run every DMAIC tool against one real or sample process and note what changes at each step.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://xfdev.yesterdaystractors.com/index.php?threads/1879378/">View ICYB Resource</a>
+            <span class="res-url">https://xfdev.yesterdaystractors.com/index.php?threads/1879378/</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="L3M2" data-category="Procurement and Supply Chain" data-vendor="CIPS">
+          <div class="card-head">
+            <span class="badge-code">L3M2</span>
+            <span class="badge-cat">Procurement and Supply Chain</span>
+          </div>
+          <h3 class="exam-title hl">CIPS Ethical Procurement and Supply</h3>
+          <p class="exam-meta hl">Vendor: CIPS</p>
+          <p class="exam-desc hl">Level 3 core module covering the stages of the sourcing process and their tasks, the significance of ethics in procurement, sustainability in supply chains, and measuring operational performance.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Sourcing Process</li><li>Ethical Procurement</li><li>Sustainability</li><li>Supplier Conduct</li><li>Performance Measurement</li><li>Operational Improvement</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Learn the sourcing stages in strict order and practice short-answer questions on each stage's tasks.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://xfdev.yesterdaystractors.com/index.php?threads/1879398/">View L3M2 Resource</a>
+            <span class="res-url">https://xfdev.yesterdaystractors.com/index.php?threads/1879398/</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="API-571" data-category="Design and Accessibility" data-vendor="API">
+          <div class="card-head">
+            <span class="badge-code">API-571</span>
+            <span class="badge-cat">Design and Accessibility</span>
+          </div>
+          <h3 class="exam-title hl">API 571 Corrosion and Materials Professional</h3>
+          <p class="exam-meta hl">Vendor: API</p>
+          <p class="exam-desc hl">Professional exam covering corrosion and material damage in refining and process industry equipment: damage mechanisms by environment and temperature, inspection awareness, and practical mitigation methods.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Corrosion Mechanisms</li><li>Materials Behavior</li><li>Damage Mechanisms</li><li>Inspection Awareness</li><li>Mitigation Methods</li><li>Process Equipment</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Group damage mechanisms by environment and temperature; that structure answers most case questions.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://xfdev.yesterdaystractors.com/index.php?threads/1879409/">View API-571 Resource</a>
+            <span class="res-url">https://xfdev.yesterdaystractors.com/index.php?threads/1879409/</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="Scripting-and-Programming-Foundations" data-category="Education and Academic" data-vendor="WGU">
+          <div class="card-head">
+            <span class="badge-code">Scripting-and-Programming-Foundations</span>
+            <span class="badge-cat">Education and Academic</span>
+          </div>
+          <h3 class="exam-title hl">Scripting and Programming Foundations</h3>
+          <p class="exam-meta hl">Vendor: WGU</p>
+          <p class="exam-desc hl">University-level exam covering programming fundamentals: variables and data types, control flow, functions, basic algorithms and complexity, programming paradigms, and introductory scripting and debugging practice.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Variables and Types</li><li>Control Flow</li><li>Functions</li><li>Algorithms</li><li>Programming Paradigms</li><li>Debugging</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Translate short problem statements into tiny scripts in two languages to separate concepts from syntax.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://xfdev.yesterdaystractors.com/index.php?threads/1879418/">View Scripting-and-Programming-Foundations Resource</a>
+            <span class="res-url">https://xfdev.yesterdaystractors.com/index.php?threads/1879418/</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="CCM-101" data-category="Software Development" data-vendor="Salesforce">
+          <div class="card-head">
+            <span class="badge-code">CCM-101</span>
+            <span class="badge-cat">Software Development</span>
+          </div>
+          <h3 class="exam-title hl">Manage and Merchandise a B2C Commerce Cloud Store</h3>
+          <p class="exam-meta hl">Vendor: Salesforce</p>
+          <p class="exam-desc hl">B2C Commerce exam covering storefront management and merchandising: catalog and search configuration, product ordering and categorization, promotions and campaigns, content management, and shopper experience tuning.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>B2C Commerce Storefronts</li><li>Catalogs and Search</li><li>Promotions</li><li>Content Management</li><li>Shopper Experience</li><li>Analytics</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Merchandise a demo store end to end and observe how each rule changes category pages and search results.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://xfdev.yesterdaystractors.com/index.php?threads/1879441/">View CCM-101 Resource</a>
+            <span class="res-url">https://xfdev.yesterdaystractors.com/index.php?threads/1879441/</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="D-VXB-DY-A-24" data-category="Data Center and Storage" data-vendor="Dell Technologies">
+          <div class="card-head">
+            <span class="badge-code">D-VXB-DY-A-24</span>
+            <span class="badge-cat">Data Center and Storage</span>
+          </div>
+          <h3 class="exam-title hl">Dell VxBlock Deploy</h3>
+          <p class="exam-meta hl">Vendor: Dell Technologies</p>
+          <p class="exam-desc hl">Deployment exam covering Dell VxBlock converged systems: architecture and components, implementation steps, system validation and verification, and integration with data protection and management tools.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Converged Infrastructure</li><li>VxBlock Architecture</li><li>Implementation Steps</li><li>System Validation</li><li>Data Protection Integration</li><li>Operations Handover</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Walk the deployment checklist in order and connect every verification step to the risk it controls.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://xfdev.yesterdaystractors.com/index.php?threads/1879452/">View D-VXB-DY-A-24 Resource</a>
+            <span class="res-url">https://xfdev.yesterdaystractors.com/index.php?threads/1879452/</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="Secure-Software-Design" data-category="Cybersecurity" data-vendor="WGU">
+          <div class="card-head">
+            <span class="badge-code">Secure-Software-Design</span>
+            <span class="badge-cat">Cybersecurity</span>
+          </div>
+          <h3 class="exam-title hl">Secure Software Design</h3>
+          <p class="exam-meta hl">Vendor: WGU</p>
+          <p class="exam-desc hl">Exam covering security-focused software design: threat modeling, secure design principles, abuse cases, security requirements and controls at design time, and reviewing designs for weaknesses before build.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Threat Modeling</li><li>Secure Design Principles</li><li>Abuse Cases</li><li>Security Requirements</li><li>Design Review</li><li>Risk Analysis</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Threat model a small application with a structured method and turn every finding into a concrete design change.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://xfdev.yesterdaystractors.com/index.php?threads/1879463/">View Secure-Software-Design Resource</a>
+            <span class="res-url">https://xfdev.yesterdaystractors.com/index.php?threads/1879463/</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="MS-102" data-category="IT Service Management" data-vendor="Microsoft">
+          <div class="card-head">
+            <span class="badge-code">MS-102</span>
+            <span class="badge-cat">IT Service Management</span>
+          </div>
+          <h3 class="exam-title hl">Microsoft 365 Administrator</h3>
+          <p class="exam-meta hl">Vendor: Microsoft</p>
+          <p class="exam-desc hl">Administrator exam covering tenant-level management of Microsoft 365: identity and access, security and compliance services, Exchange, SharePoint and Teams administration, and service health and reporting.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Tenant Administration</li><li>Identity Management</li><li>Security and Compliance</li><li>Exchange Online</li><li>SharePoint and Teams</li><li>Service Health</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Practice tenant-level tasks in a dev tenant and record which admin center owns each setting.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://xfdev.yesterdaystractors.com/index.php?threads/1879485/">View MS-102 Resource</a>
+            <span class="res-url">https://xfdev.yesterdaystractors.com/index.php?threads/1879485/</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="5V0-23.20" data-category="Cloud and Platform" data-vendor="VMware">
+          <div class="card-head">
+            <span class="badge-code">5V0-23.20</span>
+            <span class="badge-cat">Cloud and Platform</span>
+          </div>
+          <h3 class="exam-title hl">VMware vSphere with Tanzu Specialist</h3>
+          <p class="exam-meta hl">Vendor: VMware</p>
+          <p class="exam-desc hl">Specialist exam covering vSphere with Tanzu: supervisor clusters and namespaces, Tanzu Kubernetes cluster life cycles, vSphere networking and storage for Kubernetes workloads, and security and access control.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Supervisor Clusters</li><li>Tanzu Kubernetes Clusters</li><li>Namespaces</li><li>vSphere Networking</li><li>Storage Policies</li><li>Access Control</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Deploy a supervisor cluster and study exactly how pods receive compute, network, and storage resources.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://help.fumotousa.com/en-US/Community/Post/47656">View 5V0-23.20 Resource</a>
+            <span class="res-url">https://help.fumotousa.com/en-US/Community/Post/47656</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="Certified-Business-Analyst" data-category="ERP and Business Applications" data-vendor="Salesforce">
+          <div class="card-head">
+            <span class="badge-code">Certified-Business-Analyst</span>
+            <span class="badge-cat">ERP and Business Applications</span>
+          </div>
+          <h3 class="exam-title hl">Salesforce Certified Business Analyst</h3>
+          <p class="exam-meta hl">Vendor: Salesforce</p>
+          <p class="exam-desc hl">Business analyst exam covering discovery and requirements work on the Salesforce platform: stakeholder engagement, eliciting and documenting requirements, process mapping, user stories and acceptance criteria, and supporting solution design.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Discovery</li><li>Requirements Elicitation</li><li>User Stories</li><li>Process Mapping</li><li>Stakeholder Engagement</li><li>Solution Design Support</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Write ten user stories with clear acceptance criteria and review them against real Salesforce capabilities.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://help.fumotousa.com/en-US/Community/Post/47657">View Certified-Business-Analyst Resource</a>
+            <span class="res-url">https://help.fumotousa.com/en-US/Community/Post/47657</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="CIS-HAM" data-category="IT Service Management" data-vendor="ServiceNow">
+          <div class="card-head">
+            <span class="badge-code">CIS-HAM</span>
+            <span class="badge-cat">IT Service Management</span>
+          </div>
+          <h3 class="exam-title hl">ServiceNow Certified Implementation Specialist Hardware Asset Management</h3>
+          <p class="exam-meta hl">Vendor: ServiceNow</p>
+          <p class="exam-desc hl">Implementation exam covering hardware asset management on ServiceNow: asset life cycle states, inventory and stockrooms, procurement integration, CMDB relationships, discovery, and contract and warranty tracking.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Asset Life Cycle</li><li>Inventory Management</li><li>Procurement Integration</li><li>CMDB Relationships</li><li>Discovery</li><li>Contract Management</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Map one hardware life cycle from request to disposal and list the records updated at each stage.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://help.fumotousa.com/en-US/Community/Post/47658">View CIS-HAM Resource</a>
+            <span class="res-url">https://help.fumotousa.com/en-US/Community/Post/47658</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="FlashArray-Storage-Professional" data-category="Data Center and Storage" data-vendor="Pure Storage">
+          <div class="card-head">
+            <span class="badge-code">FlashArray-Storage-Professional</span>
+            <span class="badge-cat">Data Center and Storage</span>
+          </div>
+          <h3 class="exam-title hl">Pure Storage FlashArray Storage Professional</h3>
+          <p class="exam-meta hl">Vendor: Pure Storage</p>
+          <p class="exam-desc hl">Professional exam covering Pure Storage FlashArray: architecture and data reduction, volume provisioning and snapshots, replication and disaster recovery, performance behavior, and everyday administration.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>FlashArray Architecture</li><li>Volume Provisioning</li><li>Snapshots</li><li>Replication</li><li>Data Reduction</li><li>Performance</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Provision volumes, take snapshots, and rehearse a failover flow in a lab or product simulator.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://help.fumotousa.com/en-US/Community/Post/47659">View FlashArray-Storage-Professional Resource</a>
+            <span class="res-url">https://help.fumotousa.com/en-US/Community/Post/47659</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="AZ-120" data-category="Cloud and Platform" data-vendor="Microsoft">
+          <div class="card-head">
+            <span class="badge-code">AZ-120</span>
+            <span class="badge-cat">Cloud and Platform</span>
+          </div>
+          <h3 class="exam-title hl">Planning and Administering Microsoft Azure for SAP Workloads</h3>
+          <p class="exam-meta hl">Vendor: Microsoft</p>
+          <p class="exam-desc hl">Exam covering SAP systems on Azure: sizing and capacity planning, deploying SAP infrastructure, identity and security design, backup and recovery, high availability, and monitoring SAP on Azure.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>SAP on Azure</li><li>VM Sizing</li><li>High Availability</li><li>Backup and Recovery</li><li>Identity and Security</li><li>Monitoring</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Design an SAP landscape on Azure and defend the VM, storage, and high availability choice for each component.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://help.fumotousa.com/en-US/Community/Post/47660">View AZ-120 Resource</a>
+            <span class="res-url">https://help.fumotousa.com/en-US/Community/Post/47660</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="1Z0-1119-1" data-category="Cloud and Platform" data-vendor="Oracle">
+          <div class="card-head">
+            <span class="badge-code">1Z0-1119-1</span>
+            <span class="badge-cat">Cloud and Platform</span>
+          </div>
+          <h3 class="exam-title hl">Oracle Cloud Infrastructure for Sunbird Ed Specialty</h3>
+          <p class="exam-meta hl">Vendor: Oracle</p>
+          <p class="exam-desc hl">Specialty exam covering Oracle Cloud Infrastructure fundamentals as applied to Sunbird Ed deployments: compute, networking and storage services, identity and access, and managing cloud resources for education platforms.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Oracle Cloud Infrastructure</li><li>Compute Services</li><li>Virtual Networking</li><li>Storage Services</li><li>Identity and Access</li><li>Sunbird Ed Deployments</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Review each OCI service and relate it to a concrete need in a Sunbird Ed deployment.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://help.fumotousa.com/en-US/Community/Post/47661">View 1Z0-1119-1 Resource</a>
+            <span class="res-url">https://help.fumotousa.com/en-US/Community/Post/47661</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="AZ-700" data-category="Networking and Telecom" data-vendor="Microsoft">
+          <div class="card-head">
+            <span class="badge-code">AZ-700</span>
+            <span class="badge-cat">Networking and Telecom</span>
+          </div>
+          <h3 class="exam-title hl">Designing and Implementing Microsoft Azure Networking Solutions</h3>
+          <p class="exam-meta hl">Vendor: Microsoft</p>
+          <p class="exam-desc hl">Exam covering Azure network design and implementation: core virtual networks, hybrid connectivity with VPN and ExpressRoute, private access to services, outbound connectivity, load balancing, DNS, and network security.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Azure Virtual Network</li><li>VPN and ExpressRoute</li><li>Private Link</li><li>Load Balancing</li><li>DNS Design</li><li>Network Security</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Design hub-and-spoke and hybrid networks and validate every design decision against a security checklist.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://help.fumotousa.com/en-US/Community/Post/47664">View AZ-700 Resource</a>
+            <span class="res-url">https://help.fumotousa.com/en-US/Community/Post/47664</span>
+          </div>
+        </article>
+
+        <article class="exam-card reveal" data-code="SC-200" data-category="Cybersecurity" data-vendor="Microsoft">
+          <div class="card-head">
+            <span class="badge-code">SC-200</span>
+            <span class="badge-cat">Cybersecurity</span>
+          </div>
+          <h3 class="exam-title hl">Microsoft Security Operations Analyst</h3>
+          <p class="exam-meta hl">Vendor: Microsoft</p>
+          <p class="exam-desc hl">Security operations exam covering threat mitigation with Microsoft Sentinel, Microsoft Defender XDR, and Defender for Cloud: data onboarding, KQL detection queries, threat hunting, incident response, and reporting.</p>
+          <div class="knowledge">
+            <h4>Key knowledge areas</h4>
+            <ul class="tag-list hl">
+              <li>Microsoft Sentinel</li><li>KQL Queries</li><li>Threat Hunting</li><li>Defender XDR</li><li>Incident Response</li><li>Defender for Cloud</li>
+            </ul>
+          </div>
+          <p class="exam-tip hl"><strong>Study approach:</strong> Write KQL detections for five common attack patterns and test them against sample log data.</p>
+          <div class="exam-actions">
+            <a class="btn btn-primary" href="https://help.fumotousa.com/en-US/Community/Post/47665">View SC-200 Resource</a>
+            <span class="res-url">https://help.fumotousa.com/en-US/Community/Post/47665</span>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="empty-state" id="empty-state" role="status">
+        <h3>No results found</h3>
+        <p id="empty-message">No exams match your current search and filters. Try a shorter search term, search by exam code (such as AZ-700), or clear the filters to see the full catalog.</p>
+        <button class="btn btn-primary" id="empty-clear" type="button">Clear search and filters</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preparation Guide -->
+  <section class="prep" id="preparation-guide" aria-labelledby="prep-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-kicker">Study method</p>
+        <h2 id="prep-title">Certification Preparation Guide</h2>
+        <p>Passing a certification exam is mostly a planning problem. The steps below describe a study method that works for technical and non-technical certifications alike.</p>
+      </div>
+      <div class="prep-grid">
+        <div class="prep-card reveal">
+          <div class="prep-num">01</div>
+          <h3>Understand the exam objectives</h3>
+          <p>Read the official objectives before you study anything else. Note the weight of each domain and the question formats, then build your entire plan around that outline instead of around a single textbook.</p>
+        </div>
+        <div class="prep-card reveal">
+          <div class="prep-num">02</div>
+          <h3>Create a realistic study schedule</h3>
+          <p>Count the weeks until your exam date and the hours you truly have each week. Divide topics across that budget with one buffer week at the end, and schedule shorter review sessions in addition to new material.</p>
+        </div>
+        <div class="prep-card reveal">
+          <div class="prep-num">03</div>
+          <h3>Learn core concepts before memorization</h3>
+          <p>Understand why a technology or process works before memorizing its details. Conceptual understanding survives scenario questions, while memorized lists often fail when the wording changes.</p>
+        </div>
+        <div class="prep-card reveal">
+          <div class="prep-num">04</div>
+          <h3>Study official documentation</h3>
+          <p>Vendor documentation and official study guides describe the world the exam is written from. Note default values, named procedures, and terminology exactly as the documentation uses them.</p>
+        </div>
+        <div class="prep-card reveal">
+          <div class="prep-num">05</div>
+          <h3>Build practical understanding</h3>
+          <p>Use free tiers, trial tenants, sandboxes, or simulators wherever possible. Performing a task once teaches more than reading about it three times and makes scenario questions far easier.</p>
+        </div>
+        <div class="prep-card reveal">
+          <div class="prep-num">06</div>
+          <h3>Practice questions responsibly</h3>
+          <p>Use practice questions to find gaps, not as a substitute for learning. For every answer you get wrong, study the underlying topic until you can explain why the correct option is correct.</p>
+        </div>
+        <div class="prep-card reveal">
+          <div class="prep-num">07</div>
+          <h3>Review weak areas deliberately</h3>
+          <p>Keep a running list of topics you miss or avoid. Schedule specific sessions for that list instead of rereading material you already know, and close entries only when you can teach them.</p>
+        </div>
+        <div class="prep-card reveal">
+          <div class="prep-num">08</div>
+          <h3>Take timed practice sessions</h3>
+          <p>At least twice before exam day, sit a full-length mock under real time limits with no notes. Pace problems are much easier to fix in practice than in the testing center.</p>
+        </div>
+        <div class="prep-card reveal">
+          <div class="prep-num">09</div>
+          <h3>Track preparation progress</h3>
+          <p>Check off objectives as you cover them and record your mock scores over time. A simple spreadsheet is enough to show whether your plan is working and where to spend the remaining weeks.</p>
+        </div>
+        <div class="prep-card reveal">
+          <div class="prep-num">10</div>
+          <h3>Revisit difficult topics</h3>
+          <p>Hard topics need several passes separated by days. Space your revisits so each round tests recall first and only then consults notes, which builds much stronger memory.</p>
+        </div>
+        <div class="prep-card reveal">
+          <div class="prep-num">11</div>
+          <h3>Final exam preparation</h3>
+          <p>Use the last week for light review, logistics, and rest. Confirm your ID and exam rules, plan your route or testing setup, and avoid cramming new material the day before.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-kicker">Common questions</p>
+        <h2 id="faq-title">Certification Preparation FAQ</h2>
+        <p>Short answers to the questions candidates ask most often when planning their study.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <h3>
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-panel-1" id="faq-btn-1">
+              How should I start preparing for a certification exam?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-panel-wrap"><div class="faq-panel" id="faq-panel-1" role="region" aria-labelledby="faq-btn-1">
+            <p>Start by downloading the official exam objectives and reading them twice. Choose one primary study resource that follows that outline, book an exam date to create a deadline, and build a weekly schedule that fits your real available hours. Only after those steps should you start reading or watching course content.</p>
+          </div></div>
+        </div>
+        <div class="faq-item reveal">
+          <h3>
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-panel-2" id="faq-btn-2">
+              How do I identify the most important exam topics?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-panel-wrap"><div class="faq-panel" id="faq-panel-2" role="region" aria-labelledby="faq-btn-2">
+            <p>Use the official objectives first: most vendors publish a percentage weight per domain, which is the clearest signal of importance. Cross-check with the vendor study guide chapter list and note topics that appear in both. Practice results then show you which important topics still need work.</p>
+          </div></div>
+        </div>
+        <div class="faq-item reveal">
+          <h3>
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-panel-3" id="faq-btn-3">
+              How should I organize my study schedule?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-panel-wrap"><div class="faq-panel" id="faq-panel-3" role="region" aria-labelledby="faq-btn-3">
+            <p>Split the objectives into weekly blocks weighted by their exam importance and your current level. Plan five or six short sessions per week rather than one long weekend session, add a weekly review slot, and keep a final buffer week empty for weak areas and mock exams.</p>
+          </div></div>
+        </div>
+        <div class="faq-item reveal">
+          <h3>
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-panel-4" id="faq-btn-4">
+              Should I study concepts before practicing questions?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-panel-wrap"><div class="faq-panel" id="faq-panel-4" role="region" aria-labelledby="faq-btn-4">
+            <p>Yes for every new domain. Learn the concepts first so your answers rest on understanding, then use practice questions to test and refine that understanding. Candidates who only memorize question banks usually struggle when the exam presents a new scenario.</p>
+          </div></div>
+        </div>
+        <div class="faq-item reveal">
+          <h3>
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-panel-5" id="faq-btn-5">
+              How can I improve weak knowledge areas?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-panel-wrap"><div class="faq-panel" id="faq-panel-5" role="region" aria-labelledby="faq-btn-5">
+            <p>Log every miss or guess in a single list with its topic name. Return to that topic with a different resource than the one that failed you, try a hands-on exercise if possible, and close the entry only after you can explain the concept without notes.</p>
+          </div></div>
+        </div>
+        <div class="faq-item reveal">
+          <h3>
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-panel-6" id="faq-btn-6">
+              How can official documentation help with preparation?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-panel-wrap"><div class="faq-panel" id="faq-panel-6" role="region" aria-labelledby="faq-btn-6">
+            <p>Official documentation defines the terminology, defaults, and limits the exam writers use. Reading it for your highest-weighted topics removes guesswork, and practice on documented features builds the practical familiarity that scenario questions reward.</p>
+          </div></div>
+        </div>
+        <div class="faq-item reveal">
+          <h3>
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-panel-7" id="faq-btn-7">
+              How should I prepare during the final days before an exam?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq-panel-wrap"><div class="faq-panel" id="faq-panel-7" role="region" aria-labelledby="faq-btn-7">
+            <p>Stop adding new material three to four days out. Review your weak-area list and one-page summaries, take a final mock at the real time of day, handle logistics such as ID and travel, and sleep properly. A rested mind outperforms a last-minute cram.</p>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="#top">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </span>
+          <span>CertPrep Hub<small>Exam Knowledge Portal</small></span>
+        </a>
+        <p class="footer-about">An independent certification exam preparation portal with exam-specific knowledge notes, study approaches, and curated resource links for professional and academic certifications.</p>
+      </div>
+      <div>
+        <h3>Navigation</h3>
+        <ul class="footer-links">
+          <li><a href="#top">Home</a></li>
+          <li><a href="#statistics">Overview</a></li>
+          <li><a href="#exam-resources">Exam Resources</a></li>
+          <li><a href="#preparation-guide">Preparation Guide</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Categories</h3>
+        <ul class="footer-links">
+          <li><a href="#exam-resources" data-cat-link="Cybersecurity">Cybersecurity</a></li>
+          <li><a href="#exam-resources" data-cat-link="Cloud and Platform">Cloud and Platform</a></li>
+          <li><a href="#exam-resources" data-cat-link="Data and AI">Data and AI</a></li>
+          <li><a href="#exam-resources" data-cat-link="Software Development">Software Development</a></li>
+          <li><a href="#exam-resources" data-cat-link="Networking and Telecom">Networking and Telecom</a></li>
+          <li><a href="#exam-resources" data-cat-link="Procurement and Supply Chain">Procurement and Supply Chain</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer"><strong>Educational disclaimer:</strong> CertPrep Hub is an independent educational resource. It is not affiliated with, endorsed by, or sponsored by any certification vendor named on this site unless explicitly stated. Exam names and codes are used only to identify the subjects covered. Candidates should always confirm exam details with the official awarding body and use authorized study materials.</p>
+      <p>Copyright 2026 CertPrep Hub. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  var grid = document.getElementById('exam-grid');
+  var cards = Array.prototype.slice.call(grid.querySelectorAll('.exam-card'));
+  var searchInput = document.getElementById('exam-search');
+  var heroSearch = document.getElementById('hero-search');
+  var heroForm = document.getElementById('hero-search-form');
+  var clearBtn = document.getElementById('search-clear');
+  var emptyClear = document.getElementById('empty-clear');
+  var emptyState = document.getElementById('empty-state');
+  var emptyMessage = document.getElementById('empty-message');
+  var resultCount = document.getElementById('result-count');
+  var searchHint = document.getElementById('search-hint');
+  var chipWrap = document.getElementById('category-chips');
+  var vendorSelect = document.getElementById('vendor-select');
+  var state = { query: '', category: 'all', vendor: 'all' };
+
+  /* Prepare search text and highlight originals for every card */
+  cards.forEach(function (card) {
+    var text = card.textContent.toLowerCase().replace(/\s+/g, ' ');
+    card.setAttribute('data-search', text);
+    card.querySelectorAll('.hl').forEach(function (el) {
+      el._origHTML = el.innerHTML;
+    });
+  });
+
+  /* Statistics calculated from the catalog */
+  var categories = {};
+  var vendors = {};
+  cards.forEach(function (card) {
+    categories[card.getAttribute('data-category')] = true;
+    vendors[card.getAttribute('data-vendor')] = true;
+  });
+  var resourceCount = grid.querySelectorAll('.exam-actions a').length;
+  document.getElementById('stat-exams').textContent = String(cards.length);
+  document.getElementById('stat-resources').textContent = String(resourceCount);
+  document.getElementById('stat-categories').textContent = String(Object.keys(categories).length);
+
+  /* Category filter chips built from the catalog */
+  function makeChip(label, value) {
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'chip';
+    btn.textContent = label;
+    btn.setAttribute('data-value', value);
+    btn.setAttribute('aria-pressed', value === 'all' ? 'true' : 'false');
+    btn.addEventListener('click', function () {
+      state.category = value;
+      chipWrap.querySelectorAll('.chip').forEach(function (c) {
+        c.setAttribute('aria-pressed', c.getAttribute('data-value') === value ? 'true' : 'false');
+      });
+      apply();
+    });
+    return btn;
+  }
+  chipWrap.appendChild(makeChip('All categories', 'all'));
+  Object.keys(categories).sort().forEach(function (cat) {
+    chipWrap.appendChild(makeChip(cat, cat));
+  });
+
+  /* Vendor filter built from the catalog */
+  Object.keys(vendors).sort().forEach(function (v) {
+    var opt = document.createElement('option');
+    opt.value = v;
+    opt.textContent = v;
+    vendorSelect.appendChild(opt);
+  });
+  vendorSelect.addEventListener('change', function () {
+    state.vendor = vendorSelect.value;
+    apply();
+  });
+
+  /* Search highlighting */
+  function escapeRe(s) {
+    return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+  function clearMarks(card) {
+    card.querySelectorAll('.hl').forEach(function (el) {
+      el.innerHTML = el._origHTML;
+    });
+  }
+  function highlight(card, terms) {
+    clearMarks(card);
+    if (!terms.length) { return; }
+    var pattern = new RegExp('(' + terms.map(escapeRe).join('|') + ')', 'gi');
+    card.querySelectorAll('.hl').forEach(function (root) {
+      var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+      var nodes = [];
+      while (walker.nextNode()) {
+        var parent = walker.currentNode.parentElement;
+        if (parent && !parent.closest('a')) { nodes.push(walker.currentNode); }
+      }
+      nodes.forEach(function (node) {
+        var text = node.nodeValue;
+        pattern.lastIndex = 0;
+        if (!pattern.test(text)) { return; }
+        pattern.lastIndex = 0;
+        var frag = document.createDocumentFragment();
+        var last = 0, m;
+        while ((m = pattern.exec(text)) !== null) {
+          if (m.index > last) { frag.appendChild(document.createTextNode(text.slice(last, m.index))); }
+          var mark = document.createElement('mark');
+          mark.textContent = m[0];
+          frag.appendChild(mark);
+          last = m.index + m[0].length;
+          if (m[0].length === 0) { pattern.lastIndex += 1; }
+        }
+        if (last < text.length) { frag.appendChild(document.createTextNode(text.slice(last))); }
+        node.parentNode.replaceChild(frag, node);
+      });
+    });
+  }
+
+  /* Filter and search */
+  function termsFromQuery(q) {
+    return q.toLowerCase().split(/\s+/).filter(function (t) { return t.length >= 2; });
+  }
+  function apply() {
+    var terms = termsFromQuery(state.query);
+    var visible = 0;
+    cards.forEach(function (card) {
+      var matchQuery = terms.length === 0 || terms.every(function (t) {
+        return card.getAttribute('data-search').indexOf(t) !== -1;
+      });
+      var matchCat = state.category === 'all' || card.getAttribute('data-category') === state.category;
+      var matchVendor = state.vendor === 'all' || card.getAttribute('data-vendor') === state.vendor;
+      var show = matchQuery && matchCat && matchVendor;
+      card.classList.toggle('is-hidden', !show);
+      if (show) {
+        visible += 1;
+        highlight(card, terms);
+      } else {
+        clearMarks(card);
+      }
+    });
+
+    var filtersActive = state.category !== 'all' || state.vendor !== 'all';
+    if (visible === 0) {
+      emptyState.classList.add('is-visible');
+      emptyMessage.textContent = terms.length
+        ? 'No exams match "' + state.query + '"' + (filtersActive ? ' within the current filters' : '') + '. Try a shorter term, an exam code (such as SC-300), or a technology name (such as Kubernetes).'
+        : 'No exams match the current filters. Change the category or vendor to see more exams.';
+    } else {
+      emptyState.classList.remove('is-visible');
+    }
+
+    resultCount.textContent = 'Showing ' + visible + ' of ' + cards.length + ' exams';
+    searchHint.style.display = (terms.length || filtersActive) ? 'none' : '';
+  }
+
+  function setQuery(value, from) {
+    state.query = value;
+    if (from !== 'hero') { heroSearch.value = value; }
+    if (from !== 'toolbar') { searchInput.value = value; }
+    apply();
+  }
+  searchInput.addEventListener('input', function () { setQuery(searchInput.value, 'toolbar'); });
+  heroSearch.addEventListener('input', function () { setQuery(heroSearch.value, 'hero'); });
+  heroForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    setQuery(heroSearch.value, 'hero');
+    document.getElementById('exam-resources').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    searchInput.focus({ preventScroll: true });
+  });
+  clearBtn.addEventListener('click', function () {
+    setQuery('', 'both');
+    searchInput.focus();
+  });
+  emptyClear.addEventListener('click', function () {
+    state.category = 'all';
+    state.vendor = 'all';
+    vendorSelect.value = 'all';
+    chipWrap.querySelectorAll('.chip').forEach(function (c) {
+      c.setAttribute('aria-pressed', c.getAttribute('data-value') === 'all' ? 'true' : 'false');
+    });
+    setQuery('', 'both');
+    searchInput.focus();
+  });
+
+  /* Header search button */
+  document.getElementById('header-search-btn').addEventListener('click', function () {
+    document.getElementById('exam-resources').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    searchInput.focus({ preventScroll: true });
+  });
+
+  /* Footer category links apply a category filter */
+  document.querySelectorAll('[data-cat-link]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      var value = link.getAttribute('data-cat-link');
+      state.category = value;
+      state.vendor = 'all';
+      vendorSelect.value = 'all';
+      chipWrap.querySelectorAll('.chip').forEach(function (c) {
+        c.setAttribute('aria-pressed', c.getAttribute('data-value') === value ? 'true' : 'false');
+      });
+      apply();
+    });
+  });
+
+  /* Mobile navigation */
+  var navToggle = document.getElementById('nav-toggle');
+  var nav = document.getElementById('primary-nav');
+  function closeNav() {
+    nav.classList.remove('is-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Open navigation menu');
+  }
+  navToggle.addEventListener('click', function () {
+    var open = nav.classList.toggle('is-open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    navToggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+  });
+  nav.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', closeNav);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { closeNav(); }
+  });
+
+  /* FAQ accordion */
+  document.querySelectorAll('.faq-question').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = btn.closest('.faq-item');
+      var open = item.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+
+  /* Scroll progress and header elevation */
+  var header = document.getElementById('site-header');
+  var hero = document.getElementById('hero');
+  var progressBar = document.getElementById('progress-bar');
+  var ticking = false;
+  function onScroll() {
+    if (ticking) { return; }
+    ticking = true;
+    window.requestAnimationFrame(function () {
+      var doc = document.documentElement;
+      var max = doc.scrollHeight - window.innerHeight;
+      var ratio = max > 0 ? (window.scrollY / max) * 100 : 0;
+      progressBar.style.width = Math.min(100, Math.max(0, ratio)) + '%';
+      var heroBottom = hero.offsetTop + hero.offsetHeight - header.offsetHeight;
+      header.classList.toggle('is-scrolled', window.scrollY > heroBottom);
+      ticking = false;
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* Reveal on scroll with staggered entrance for grouped elements */
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var revealItems = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    revealItems.forEach(function (el) { el.classList.add('is-visible'); });
+  } else {
+    var groups = new Map();
+    revealItems.forEach(function (el) {
+      var parent = el.parentElement;
+      if (!groups.has(parent)) { groups.set(parent, 0); }
+      var index = groups.get(parent);
+      el.style.transitionDelay = Math.min(index * 60, 300) + 'ms';
+      groups.set(parent, index + 1);
+    });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -5% 0px' });
+    revealItems.forEach(function (el) { io.observe(el); });
+  }
+
+  apply();
+})();
+</script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a409c3612ae26ba8',t:'MTc5MDMzNjUyMg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
